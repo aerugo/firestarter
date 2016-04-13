@@ -1,0 +1,39 @@
+.main_content {
+  @extend %holder;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.notice {
+  margin-bottom: 20px;
+  color: rgb(105, 117, 57);
+  background: rgb(223, 239, 215);
+  padding: 10px;
+  border: 1px solid rgb(214, 232, 196);
+  border-radius: 5px;
+}
+
+.alert {
+  margin-bottom: 20px;
+  color: rgb(187, 76, 72);
+  background: rgb(243, 222, 222);
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid rgb(239, 211, 215);
+  border-radius: 5px;
+}
+
+.panel-default > .panel-heading {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.footer {
+  padding-top: 20px;
+  text-align: justify;
+}
+
+.footer_image_col {
+  text-align: center;
+}

@@ -1,0 +1,52 @@
+.camps_list {
+  clear: both;
+  margin: 0 -10px;
+
+  &:before,
+  &:after {
+    content: "";
+    line-height: 0;
+    clear: both;
+  }
+}
+
+.join_creation {
+  @extend %button;
+  color: $c-green;
+}
+
+.new_creation {
+}
+
+.combo {
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  label {
+    margin-right: 5px;
+  }
+}
+
+.camp-back_to_camp_link {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.camp-image {
+  display: inline-block;
+  width: 30%;
+  margin-right: 3%;
+  margin-bottom: 40px;
+}
+
+.camp-upload_image_form {
+  width: 30%;
+  margin-top: 20px;
+}
+
+.camp-upload_image {
+  margin-top: 20px;
+}

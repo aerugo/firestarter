@@ -1,0 +1,7 @@
+<a href="<%= camp_path(@camp) %>" class="camp-back_to_camp_link">Back to dream</a>
+
+<% if current_user && @camp.creator == current_user %>
+	<%= render 'form' %>
+<% else %>
+    <p class="alert">Only the original co-orcreat can edit this page.</p>
+<% end %>

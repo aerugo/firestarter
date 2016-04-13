@@ -47,4 +47,4 @@ bundle exec rake db:seed
 
 
 ## TODO
-Before final version, change "camps" to creations or dreams.# firestarter
+Before final version, change "camps" to creations or dreams.
