@@ -1,0 +1,448 @@
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateCamps (20160109203540)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "camps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(64) NOT NULL, "subtitle" varchar(255) NOT NULL, "contact_email" varchar(64) NOT NULL, "contact_name" varchar(64) NOT NULL, "contact_phone" varchar(64), "description" text(4096), "electricity" text(255), "light" text(512), "fire" text(512), "noise" text(255), "nature" text(255), "moop" text(512), "plan" text(1024), "cocreation" text(1024), "neighbors" text(512), "budgetplan" text(1024), "minbudget" integer, "maxbudget" integer, "seeking_members" boolean) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160109203540"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to DeviseCreateUsers (20160114103634)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160114103634"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMemberships (20160115100444)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160115100444"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddIdsToMemberships (20160115120049)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "memberships" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_memberships_on_user_id" ON "memberships" ("user_id")
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "memberships" ADD "camp_id" integer[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memberships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memberships_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_memberships_on_camp_id" ON "memberships" ("camp_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160115120049"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddOmniauthToUsers (20160119190540)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "uid" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160119190540"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to AddUserToCamps (20160121193451)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "camps" ADD "user_id" integer
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_camps_on_user_id" ON "camps" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160121193451"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to Images (20160123134521)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/aerugo/magiskacityspells/db/migrate/20160123134521_images.rb:7)
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" blob(1048576), "user_id" integer, "camp_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160123134521"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddTicketsTable (20160221223123)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_code" text, "id_registered" boolean DEFAULT 'f' NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160221223123"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserTicketIdField (20160224205337)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "ticket_id" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160224205337"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateAdminUsers (20160227144058)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "admin_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admin_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admin_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160227144058"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateActiveAdminComments (20160227144101)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /Users/aerugo/magiskacityspells/db/migrate/20160227144101_create_active_admin_comments.rb:9)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "active_admin_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "namespace" varchar, "body" text, "resource_id" varchar NOT NULL, "resource_type" varchar NOT NULL, "author_id" integer, "author_type" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+
+  [1m[36m (0.6ms)[0m  [1mCREATE  INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160227144101"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to AddClassToUsers (20160227153633)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "guide" boolean DEFAULT 'f'
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160227153633"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddGrantsReceivedToCamps (20160305120340)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "camps" ADD "grants_received" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160305120340"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddDefaultValueForGrantsReceived (20160305121112)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "acamps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(64) NOT NULL, "subtitle" varchar(255) NOT NULL, "contact_email" varchar(64) NOT NULL, "contact_name" varchar(64) NOT NULL, "contact_phone" varchar(64), "description" text(4096), "electricity" text(255), "light" text(512), "fire" text(512), "noise" text(255), "nature" text(255), "moop" text(512), "plan" text(1024), "cocreation" text(1024), "neighbors" text(512), "budgetplan" text(1024), "minbudget" integer, "maxbudget" integer, "seeking_members" boolean, "user_id" integer, "grants_received" integer) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_camps_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_camps_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_acamps_on_user_id" ON "acamps" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "camps"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "camps"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "camps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(64) NOT NULL, "subtitle" varchar(255) NOT NULL, "contact_email" varchar(64) NOT NULL, "contact_name" varchar(64) NOT NULL, "contact_phone" varchar(64), "description" text(4096), "electricity" text(255), "light" text(512), "fire" text(512), "noise" text(255), "nature" text(255), "moop" text(512), "plan" text(1024), "cocreation" text(1024), "neighbors" text(512), "budgetplan" text(1024), "minbudget" integer, "maxbudget" integer, "seeking_members" boolean, "user_id" integer, "grants_received" integer DEFAULT 0) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acamps_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acamps_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_camps_on_user_id" ON "camps" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "acamps"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "acamps"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160305121112"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to AddGrantsToUser (20160312090410)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "grants" integer DEFAULT 8
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160312090410"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_resource_type_and_resource_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_resource_type_and_resource_id' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+[0m
+  [1m[35m (0.7ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admin_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admin_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admin_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admin_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_camps_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_camps_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memberships_on_camp_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memberships_on_camp_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_memberships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_memberships_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2016-04-12 19:25:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CampsController#index as HTML
+  [1m[35mCamp Load (0.2ms)[0m  SELECT "camps".* FROM "camps"
+  Rendered camps/index.html.erb within layouts/application (21.7ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/global.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/global.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/forms.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/forms.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/camps.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/camps.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/devise.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/devise.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/header.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/header.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/main.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/camp_card.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/camp_card.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/global.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/global.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/forms.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/forms.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/camps.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/camps.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/devise.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/devise.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/header.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/header.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/main.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/aerugo/magiskacityspells/app/assets/stylesheets/camp_card.css.scss to /Users/aerugo/magiskacityspells/app/assets/stylesheets/camp_card.scss. (called from _app_views_layouts_application_html_erb__997846574922257837_70367315750580 at /Users/aerugo/magiskacityspells/app/views/layouts/application.html.erb:11)
+Completed 200 OK in 7760ms (Views: 7758.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-c21a12950aab86ca1fc9f30983d9e9a76111cd6d871b6066a594cd2b6d847f27.css?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for ::1 at 2016-04-12 19:25:48 +0200
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-10ee4c07784b00259ca97a02c4e7fb53c1b27ebe5653a3b910426b4ea0941250.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-161387c54d1640bd9f174301b77d73ea88ce6d7daf0d7356bd50b4d0143d1b72.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-dc92ae60a047f8753fec580d6ff92df79e4315e155da987b4f9afbd626e07d20.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-e33243c5ee22a67beb226ebbd3c9da65f1aaa5d5f796aec539c38b80ebb00583.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/initializers/filters.self-6808d670791ae5166fb47face6cc6a60b047a031f8d1a7a0402647707ab73542.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-18eef5f4f4457e27d25b74bc121ddcf21b67c66f550a075a1f0e2b4c02eb1238.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-12 19:25:49 +0200
+
+
+Started GET "/" for ::1 at 2016-04-12 19:25:50 +0200
+Processing by CampsController#index as HTML
+  [1m[36mCamp Load (0.4ms)[0m  [1mSELECT "camps".* FROM "camps"[0m
+  Rendered camps/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 137ms (Views: 136.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-04-12 19:25:54 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 140ms (Views: 124.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2016-04-12 19:26:04 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cL4v6aw43cEfvjW1FSVHlW0b08ryzGwx0aKzjxVSAmtmZKzsdEWnGqEg4+l9myqCpmdtzThDT0Glka5AZKmsLg==", "user"=>{"email"=>"Test@haha.se", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@haha.se' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "test@haha.se"], ["encrypted_password", "$2a$10$HSy7ZWEulM1ycDk6NLlYHeW5RQ9pxvyYP1BbQLgx7keQmS6ciNeFi"], ["created_at", "2016-04-12 17:26:04.703795"], ["updated_at", "2016-04-12 17:26:04.703795"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-04-12 17:26:04.707025"], ["current_sign_in_at", "2016-04-12 17:26:04.707025"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-04-12 17:26:04.707761"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 135ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 19:26:04 +0200
+Processing by CampsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCamp Load (0.2ms)[0m  SELECT "camps".* FROM "camps"
+  Rendered camps/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 91ms (Views: 90.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 19:26:06 +0200
+Processing by CampsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCamp Load (0.1ms)[0m  SELECT "camps".* FROM "camps"
+  Rendered camps/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 85ms (Views: 84.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/camps/new" for ::1 at 2016-04-12 19:26:08 +0200
+Processing by CampsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered camps/_form.haml (20.1ms)
+  Rendered camps/new.haml within layouts/application (23.4ms)
+Completed 200 OK in 119ms (Views: 105.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 19:26:14 +0200
+Processing by CampsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1mSELECT "camps".* FROM "camps"[0m
+  Rendered camps/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 80ms (Views: 79.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 19:26:47 +0200
+Processing by CampsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCamp Load (0.2ms)[0m  [1mSELECT "camps".* FROM "camps"[0m
+  Rendered camps/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 77ms (Views: 76.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 19:26:51 +0200
+Processing by CampsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1mSELECT "camps".* FROM "camps"[0m
+  Rendered camps/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 81ms (Views: 80.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 19:26:52 +0200
+Processing by CampsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1mSELECT "camps".* FROM "camps"[0m
+  Rendered camps/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 81ms (Views: 80.7ms | ActiveRecord: 0.2ms)
