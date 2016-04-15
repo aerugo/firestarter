@@ -46,6 +46,9 @@ gem 'cancan' # or cancancan
 gem 'draper'
 gem 'pundit'
 
+# Image gallery
+gem 'blueimp-gallery'
+
 group :production do
   # needed by herokus
   gem 'rails_12factor'

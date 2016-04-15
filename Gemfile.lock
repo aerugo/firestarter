@@ -61,6 +61,8 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    blueimp-gallery (2.11.0.1)
+      railties (>= 3.1.0)
     bourbon (4.2.6)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -261,6 +263,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  blueimp-gallery
   byebug
   cancan
   coffee-rails (~> 4.1.0)
