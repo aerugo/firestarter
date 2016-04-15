@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8">
-    <h1 class="header-heading"><%= @camp.name %></h1>
+    <h1 class="header-sub-heading"><%= @camp.name %></h1>
   </div>
 </div>
 
@@ -86,14 +86,14 @@
 
   <div class="col-md-4">
 
-   <% if !user_signed_in? %>
+   <% if !user_signed_in? and Rails.configuration.x.firestarter_settings["creation_sidebar_welcome"] %>
    <div class="panel panel-default">
     <div class="panel-heading"><%=t :what_is_this_title %></div>
     <div class="panel-body">
       <p><%=t :what_is_this_text_html %></p>
       </div>
     </div>
-    <% end %>
+  <% end %>
 
     <div class="creation-info">
       <ul>
