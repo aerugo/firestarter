@@ -20,4 +20,78 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  # Front page
+  top_headline_html: "Magiska City<br>Spells"
+  creations_menu: "Spells"
+  register_creation_menu: "Cast spell"
+  login_menu: "Log in"
+  register_menu: "Register"
+  logout_menu: "Log out"
+  welcome_guest_title: "Welcome to Firestarter"
+  welcome_guest_text_html: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+  welcome_user_title: "Welcome to Firestarter"
+  welcome_user_text_html: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+  footer_left_html: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."
+  footer_right_html: "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire."
+
+  # Creation registration form
+  form_basics_headline: "Creation registration"
+
+  form_dream_name_label: "Creation name (required) "
+  form_dream_name_guidetext_html: "What's your creation prototype called?"
+  form_subtitle_label: "Summarize your creation (required)"
+  form_subtitle_guidetext_html: "Brief summary of the creation prototype you are applying for that will go on the front page of the dreams site. Keep it short, under 256 characters."
+  form_creator_name_label: "Your name (required)"
+  form_creator_name_guidetext_html: "What's your name, creator?"
+  form_creator_email_label: "Your email (required)"
+  form_creator_email_guidetext_html: "To let people get in touch..."
+  form_contact_phone_label: "Your phonenumber (won't be published)"
+  form_contact_phone_guidetext_html: "For urgent contact if needed."
+
+  form_additional_headline: "Additional information"
+  form_additional_info_text_html: "Can be filled in later, or not at all if it doesn't apply"
+
+  form_description_label: "Full description of concept"
+  form_description_guidetext_html: "Give a full physical and conceptual description, including interactivity how it will fit into the Borderland community. You've got 4096 characters. Make them count."
+  form_electricity_label: "Do you need electricity from the grid?"
+  form_electricity_guidetext_html: "If yes, how much approximately are we talking?"
+  form_light_label: "Will there be light?"
+  form_light_guidetext_html: "Will The Thing be illuminated during the night (yes please!)? How?"
+  form_fire_label: "Will anything burn?"
+  form_fire_guidetext_html: "Tell us about your plans for dealing with big fire, if you have such."
+  form_noise_label: "What is your audio footprint?"
+  form_noise_guidetext_html: "Are you making any noise?"
+  form_nature_label: "Forces of nature"
+  form_nature_guidetext_html: "Boesdal is a windy place, right next to the ocean, light structures have been known to go hilariously airborn, rain has been known to soak things, how are you ready for it?"
+  form_moop_label: "Moop plan (matter out of place)"
+  form_moop_guidetext_html: "All the little things that should not end up just lying around. What kind of moop (Trash et.c) will you and the participants in your creation create, and how will you deal with that?"
+  form_plan_label: "Team and plan"
+  form_plan_guidetext_html: "What does your team look like and what is your time plan?"
+  form_cocreation_label: "How can other borderlings cocreate with you?"
+  form_cocreation_guidetext_html: "How can someone be a part of this project?"
+  form_neighbors_label: "Who would your perfect neighbors be?"
+  form_neighbors_guidetext_html: "What kind of Borderlings would you like as neighbors?"
+
+  form_artgrants_headline: "Art grant information"
+  form_artgrants_text_html: "<p>If you're not looking for an art grant, leave these fields blank.</p><p>Art grants are given by the Borderland comminity. Each Borderling has 8 art-grants to hand out. You can give all your grants to one project or spread them around. Once a grant has been gifted to a dream, it can't be taken back. Each grant is worth 50 DKK. You should approximate your budget in number of grants needed. For example, if you need 5000 DKK this translates into 100 grants.</p>"
+
+  form_minigrants_label: "Minumum number of grants needed:"
+  form_minigrants_guidetext_html: "Necessary minimum budget level, below which you won't get funded."
+  form_maxigrants_label: "Grants needed to fully fund dream:"
+  form_maxigrants_guidetext_html: "How many grants you need to fully fund your project."
+  form_budgetplan_label: "Budget overview"
+  form_budgetplan_guidetext_html: "How will you use your budget? Describe your costs, not too specific, not too vague, perfectly balanced."
+
+  # Creation view
+  what_is_this_title: "What is this?"
+  what_is_this_text_html: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+
+  creation_info_headline: "Creation info"
+
+  cocreator_application_guidetext: "If you're interested in helping out with this dream, you can add your email to a list which only the dream creator can see."
+  cocreators_list_guidetext: "These people want to co-create with you:"
+
+  # Manage images view
+  images_headline: "Lorem ipsum"
+  upload_headline: "Lorem ipsum"
+  upload_guidetext_html: "Lorem ipsum"

@@ -7,12 +7,12 @@ class CampsController < ApplicationController
 
   def new
     @camp = Camp.new
-    @submit_text = 'Create Dream'
+    @submit_text = 'Create'
   end
 
   def edit
     @camp = Camp.find params[:id]
-    @submit_text = 'Update Dream'
+    @submit_text = 'Update'
   end
 
   def create
@@ -99,9 +99,9 @@ class CampsController < ApplicationController
     if !@user
       flash[:notice] = "You need to be logged in to add your email to the list."
     elsif @camp.users.include?(@user)
-      flash[:notice] = "Nice! You've already sent your email to the Dream contact."
+      flash[:notice] = "Nice! You've already sent your email to the creator."
     else
-      flash[:notice] = "Sweet! You just sent your email adress to the Dream contact."
+      flash[:notice] = "Sweet! You just sent your email adress to the creator."
       @camp.users << @user
     end
     redirect_to @camp

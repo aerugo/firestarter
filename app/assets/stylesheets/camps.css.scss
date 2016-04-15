@@ -10,6 +10,10 @@
   }
 }
 
+.top_message {
+  padding: 10px;
+}
+
 .join_creation {
   @extend %button;
   color: $c-green;

@@ -3,5 +3,5 @@
 <% if current_user && @camp.creator == current_user %>
 	<%= render 'form' %>
 <% else %>
-    <p class="alert">Only the original co-orcreat can edit this page.</p>
+    <p class="alert">Only the original creator can edit this page.</p>
 <% end %>
