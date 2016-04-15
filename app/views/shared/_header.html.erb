@@ -1,0 +1,33 @@
+<% image_path = image_path("terrasstrappa.jpg") %>
+
+<header>
+<div class="container coverphoto" style="background-image:url('<%= image_path %>'); background-position: center; ">
+
+  <div class="main_content top_menu">
+      <div class="row">
+        <div class="col-md-8">
+          <h1><a class="header-top-menu" href="/"><%=t :top_headline_html %></a></h1>
+        </div>
+        <div class="col-md-4">
+          <div class="header-nav">
+            <a href="/"><%=t :creations_menu %></a>
+            <% if user_signed_in? %>
+            <%= link_to t("register_creation_menu"), new_camp_path %>
+            <% end %>
+            <% if !user_signed_in? %>
+            <%= link_to t("login_menu"), new_user_session_path %>
+            <% end %>
+            <% if !user_signed_in? %>
+            <%= link_to t("register_menu"), new_user_registration_path %>
+            <% end %>
+            <% if user_signed_in? %>
+            <%= link_to t("logout_menu"), destroy_user_session_path, method: :delete %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+</header>
