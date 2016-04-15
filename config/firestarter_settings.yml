@@ -17,8 +17,8 @@ defaults: &defaults
   user_authentication_codes: true
   add_to_list: true
   granting_active: false
-  footer_text: true
-  footer_logo: true
+  footer_text: false
+  footer_logo: false
   creation_sidebar_welcome: true
 
 development:
