@@ -1,4 +1,3 @@
-
 <div class="row">
   <div class="col-md-8">
     <h1 class="header-heading"><%= @camp.name %></h1>
@@ -9,11 +8,18 @@
 
   <div class="col-md-8">
 
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Blueimp Gallery -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+      <div class="slides"></div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="close">×</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+    </div>
 
-      <!-- Wrapper for slides -->
-
-      <div class="carousel-inner" role="listbox">
+    <div id="links">
         <% @camp.images.each_with_index do |image, index| %>
         <% status = "" %>
         <% if index == 0 %>
@@ -21,27 +27,32 @@
         <% end %>
         <% image_path = camp_image_path(camp_id: @camp.id, id: image.id) %>
 
-        <div class="item <%= status %>">
-          <%= image_tag(image_path) %>
-          <div class="carousel-caption">
-            <p></p>
-          </div>
+        <div class="thumbnail">
+          <a href="<%= image_path %>">
+            <img src="<%= image_path %>">
+          </a>
         </div>
 
         <% end %>
-      </div>
 
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
 
+    <% content_for(:head) do %>
+      <script>
+      window.onload = function(){ 
+        document.getElementById('links').onclick = function (event) {
+          event = event || window.event;
+          var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+          blueimp.Gallery(links, options);
+        };
+      };
+      </script>
+    <% end %>
+
+    <!-- Creation text content -->
     <div class="camp-description">
       <b>Summary</b>
       <p><%= simple_format(@camp.subtitle) %></p>

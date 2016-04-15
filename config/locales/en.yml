@@ -21,6 +21,7 @@
 
 en:
   # Front page
+  browser_title_tag: "Magiska City Spells"
   top_headline_html: "Magiska City<br>Spells"
   creations_menu: "Spells"
   register_creation_menu: "Cast spell"

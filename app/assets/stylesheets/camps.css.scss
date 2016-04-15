@@ -46,6 +46,27 @@
   margin-bottom: 40px;
 }
 
+.thumbnail {
+  position: relative;
+  width: 30%;
+  height: 100px;
+  overflow: hidden;
+  display: inline-block;
+  clip-path: inset(10px 20px 30px 40px);
+  margin: 0px;
+}
+
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 50%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
 .camp-upload_image_form {
   width: 30%;
   margin-top: 20px;
