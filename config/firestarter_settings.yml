@@ -19,6 +19,7 @@ defaults: &defaults
   granting_active: false
   footer_text: false
   footer_logo: false
+  creation_sidebar_welcome: false
 
 development:
   <<: *defaults
