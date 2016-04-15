@@ -21,29 +21,29 @@
 
 en:
   # Front page
-  browser_title_tag: "Borderland Dreams"
-  top_headline_html: "Borderland<br>Dreams"
-  creations_menu: "Dreams"
-  register_creation_menu: "Create Dream"
+  browser_title_tag: "Magiska City Spells"
+  top_headline_html: "Magiska City<br>Spells"
+  creations_menu: "Spells"
+  register_creation_menu: "Cast spell"
   login_menu: "Log in"
   register_menu: "Register"
   logout_menu: "Log out"
-  welcome_guest_title: "Welcome to your Dreams"
-  welcome_guest_text_html: "Congratulations! You've stumbled upon something special! <b><a href="http://www.theborderland.se">THE BORDERLAND</a></b> is some awesome fucking shit. I mean, you can't even begin to understand the total exuberance of outlandish hijinks that people come up with for this thing. It's just utterly bananas. Dang!</b>"
-  welcome_user_title: "Welcome to your Dreams"
-  welcome_user_text_html: "Borderland Dreams is a directory of our collective imagination. We dream together and breathe life into our mad and wonderous creations. Dreams need matter to come to life, and this is where we share resources to make that happen. You have 5 grants left to give. Think of these as superpowers, with which you can make dreams into matter! Granting has not been activated yet, but once it is you'll be able to decide what dreams you give them to. Pretty neat, huh? For now, have a look around or create a dream of your own!"
-  footer_left_html: "The Borderland is a participatory community where we co-create events and gatherings as prototypes for our dreams. It is an empty container, open to your initiative. It is an invitation to play, to reflect, and to engage. If you have any question please ask in our <a href='facebook.com/groups/theborderland/'>Facebook Group</a>."
-  footer_right_html: "In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators."
+  welcome_guest_title: "Welcome to Firestarter"
+  welcome_guest_text_html: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+  welcome_user_title: "Welcome to Firestarter"
+  welcome_user_text_html: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+  footer_left_html: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."
+  footer_right_html: "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire."
 
   # Creation registration form
-  form_basics_headline: "Dream registration"
+  form_basics_headline: "Creation registration"
 
-  form_dream_name_label: "Dream name (required) "
-  form_dream_name_guidetext_html: "What's your dream prototype called?"
-  form_subtitle_label: "Summarize your dream (required)"
-  form_subtitle_guidetext_html: "Brief summary of the dream prototype you are applying for that will go on the front page of the dreams site. Keep it short, under 256 characters."
+  form_dream_name_label: "Creation name (required) "
+  form_dream_name_guidetext_html: "What's your creation prototype called?"
+  form_subtitle_label: "Summarize your creation (required)"
+  form_subtitle_guidetext_html: "Brief summary of the creation prototype you are applying for that will go on the front page of the dreams site. Keep it short, under 256 characters."
   form_creator_name_label: "Your name (required)"
-  form_creator_name_guidetext_html: "What's your name, dreamer?"
+  form_creator_name_guidetext_html: "What's your name, creator?"
   form_creator_email_label: "Your email (required)"
   form_creator_email_guidetext_html: "To let people get in touch..."
   form_contact_phone_label: "Your phonenumber (won't be published)"
@@ -85,9 +85,9 @@ en:
 
   # Creation view
   what_is_this_title: "What is this?"
-  what_is_this_text_html: "Congratulations! You've stumbled upon something special. The Borderland is a participatory festival that takes place in Boesdal quarry in Denmark on July 18-24. It's a fully participatory event where everything is created by the participants themselves, with out any spectators. Read more at <a href='http://www.theborderland.se'><b>theborderland.se</b></a> and as questions in our <a href='https://www.facebook.com/groups/theborderland/'>group</a>"
+  what_is_this_text_html: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
 
-  creation_info_headline: "Details"
+  creation_info_headline: "Creation info"
 
   cocreator_application_guidetext: "If you're interested in helping out with this dream, you can add your email to a list which only the dream creator can see."
   cocreators_list_guidetext: "These people want to co-create with you:"
