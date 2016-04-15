@@ -1,0 +1,47 @@
+.coverphoto {
+  @extend %holder;
+  padding: 10px;
+  margin: 0px;
+  color: rgb(0, 213, 255);
+  width: 100%;
+  height: 240px;
+  max-width: none;
+}
+
+.header-top-menu {
+  display: inline-block;
+  font-size: 52px;
+  font-family: 'Dosis', sans-serif;
+  weight: bold;
+}
+
+.coverphoto-panel {
+  background-color: rgba(255,255,255,0.4);
+}
+
+.top_menu {
+  padding-top: 0px;
+  a {
+    color: rgb(255,255,255);
+    text-decoration: none;
+    &:hover { 
+        color: rgb(0, 213, 255);
+      }
+  }
+
+}
+
+.header-nav {
+  justify-content: flex-start;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: 'Dosis', sans-serif;
+
+  a {
+    margin-left: 15px;
+    float: right;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
