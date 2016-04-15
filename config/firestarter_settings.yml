@@ -4,19 +4,19 @@ defaults: &defaults
   description: true
   electricity: true
   light: true
-  fire: true
+  fire: false
   noise: true
-  nature: true
-  moop: true
-  plan: true
+  nature: false
+  moop: false
+  plan: false
   cocreation: true
-  neighbors: true
+  neighbors: false
   budgetplan: true
-  seeking_members: true
-  granting: true
+  seeking_members: false
+  granting: false
   user_authentication_codes: false
-  add_to_list: true
-  granting_active: true
+  add_to_list: false
+  granting_active: false
   footer_text: false
   footer_logo: false
 
