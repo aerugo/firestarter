@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312090410) do
+ActiveRecord::Schema.define(version: 20160414151735) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20160312090410) do
     t.text    "cocreation",      limit: 1024
     t.text    "neighbors",       limit: 512
     t.text    "budgetplan",      limit: 1024
-    t.integer "minbudget"
-    t.integer "maxbudget"
+    t.integer "minbudget",                    default: 0
+    t.integer "maxbudget",                    default: 0
     t.boolean "seeking_members"
     t.integer "user_id"
     t.integer "grants_received",              default: 0

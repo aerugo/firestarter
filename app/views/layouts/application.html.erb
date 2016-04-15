@@ -6,8 +6,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Share' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Rock+Salt|Slabo+27px' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Dosis:500,300,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,35 +17,8 @@
   
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="row">
-        <div class="col-md-8">
-          <h1><a class="header-heading" href="/">The Dreams of The Borderland</a></h1>
-        </div>
-        <div class="col-md-4">
-          <div class="header-container">
-            <div class="header-nav">
-              <a href="/">Dreams</a>
-              <% if user_signed_in? %>
-              <%= link_to "Register Dream", new_camp_path %>
-              <% end %>
-              <% if !user_signed_in? %>
-              <%= link_to "Log in", new_user_session_path %>
-              <% end %>
-              <% if !user_signed_in? %>
-              <%= link_to "Register", new_user_registration_path %>
-              <% end %>
-              <% if user_signed_in? %>
-              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  </div>
 
+  <%= render "shared/header" %>
   <div class="main_content container">
     <% if notice %>
     <p class="notice"><%= notice %></p>
@@ -57,6 +29,7 @@
     <%= yield %>
   </div>
 
+
   <div class="container">
     <footer>
 
@@ -65,23 +38,27 @@
       <div class="col-xs-1 col-sm-4 col-md-1">
       </div>
 
-      <div class="hidden-xs hidden-sm col-md-4 footer">
-        <b><p>
-			The Borderland is a participatory community where we co-create events and gatherings as prototypes for our dreams. It is an empty container, open to your initiative. It is an invitation to play, to reflect, and to engage. 
+      <% if Rails.configuration.x.firestarter_settings["footer_text"] %>
+        <div class="hidden-xs hidden-sm col-md-4 footer">
+          <b><p>
+  			<%=t :footer_left_html %>
+          </p></b>
+        </div>
+      <% end %>
 
-			If you have any question please ask in our <a href="facebook.com/groups/theborderland/">Facebook Group</a>.
-        </p></b>
-      </div>
+      <% if Rails.configuration.x.firestarter_settings["footer_logo"] %>
+        <div class="col-xs-10 col-sm-6 col-md-2 footer_image_col">
+          <%= image_tag "logo.png" %>
+        </div>
+      <% end %>
 
-      <div class="col-xs-10 col-sm-6 col-md-2 footer_image_col">
-        <img class="img-responsive" src="http://theborderland.se/wp-content/themes/zenon-lite/images/borderland_logo2016.png">
-      </div>
-
-      <div class="hidden-xs hidden-sm col-md-4 footer">
-        <b><p>
-			In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators.
-        </p></b>
-      </div>
+      <% if Rails.configuration.x.firestarter_settings["footer_text"] %>
+        <div class="hidden-xs hidden-sm col-md-4 footer">
+          <b><p>
+  			<%=t :footer_right_html %>
+          </p></b>
+        </div>
+      <% end %>
 
       <div class="col-xs-1 col-sm-4 col-md-1">
       </div>

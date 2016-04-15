@@ -1,7 +1,14 @@
 .main_content {
   @extend %holder;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
+  color: rgb(0,0,0);
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+body {
+  background: white;
+  color: rgb(215,230,244)
 }
 
 .notice {

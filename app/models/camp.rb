@@ -7,7 +7,7 @@ class Camp < ActiveRecord::Base
 
   validates :creator, presence: true
   validates :name, presence: true
-  validates :description, presence: true
+  validates :subtitle, presence: true
   validates :contact_email, presence: true
   validates :contact_name, presence: true
 end

@@ -45,6 +45,5 @@ After install, run:
 bundle exec rake db:migrate
 bundle exec rake db:seed
 
-
 ## TODO
 Before final version, change "camps" to creations or dreams.

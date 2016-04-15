@@ -1,26 +1,27 @@
-<div class="camps_list">
-
-  <% if !user_signed_in? %>
-  <div class="row">
-    <div class="panel panel-default">
+<% if !user_signed_in? %>
+  <div class="row top_message">
+    <div class="panel panel-default coverphoto-panel">
       <div class="panel-heading">
-        Welcome to your dreams!
+        <%=t :welcome_guest_title %>
       </div>
       <div class="panel-body">
-        <p>Congratulations! You've stumbled upon something special! <b><a href="http://www.theborderland.se">THE BORDERLAND</a></b> is some awesome fucking shit. I mean, you can't even begin to understand the total exuberance of outlandish hijinks that people come up with for this thing. It's just utterly bananas. Dang!</b></p>
+        <p><%=t :welcome_guest_text_html %></p>
       </div>
     </div>
   </div>
   <% else %>
     <div class="panel panel-default">
       <div class="panel-heading">
-        Dream on, dear Borderling – you have <%= current_user.grants %> grants left to give!
+        <%=t :welcome_user_title %>
       </div>
       <div class="panel-body">
-        <p>Borderland Dreams is a directory of our collective imagination. We dream together and breathe life into our mad and wonderous creations. Dreams need matter to come to life, and this is where we share resources to make that happen. You have <%= current_user.grants %> grants left to give. Think of these as superpowers, with which you can make dreams into matter! Granting has not been activated yet, but once it is you'll be able to decide what dreams you give them to. Pretty neat, huh? For now, have a look around or create a dream of your own!</p>
+        <p><%=t :welcome_user_text_html %></p>
       </div>
     </div>
   <% end %>
+
+
+<div class="camps_list">
 
   <% @camps.reverse.each do |camp| %>
   <a href="<%= url_for(camp) %>">
