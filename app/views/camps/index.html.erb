@@ -27,9 +27,9 @@
     </div>
   <% end %>
 
-<div class="camps_list">
+<div class="camps_list col-xs-12">
 
-  <% @camps.reverse.each do |camp| %>
+  <% @camps.each do |camp| %>
   <a href="<%= url_for(camp) %>">
     <div class="camp_card">
 
@@ -52,6 +52,6 @@
   <% end %>
 </div>
 
-<div class="row">
+<div class="row top_message" align="center">
   <div class="col-xm-12"><%= paginate @camps %></div>
 </div>
