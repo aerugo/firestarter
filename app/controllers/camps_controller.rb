@@ -2,7 +2,7 @@ class CampsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @camps = Camp.all.order(:updated_at).page(params[:page])
+    @camps = Camp.all.order('updated_at DESC').page(params[:page])
   end
 
   def new
