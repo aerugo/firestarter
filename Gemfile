@@ -51,6 +51,7 @@ gem 'blueimp-gallery'
 
 # Search and sort
 gem 'kaminari-bootstrap'
+gem 'kaminari'
 
 group :production do
   # needed by herokus
