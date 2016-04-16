@@ -2,7 +2,7 @@ class CampsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @camps = Camp.all.page(params[:page])
+    @camps = Camp.all.order("RANDOM()").page(params[:page])
   end
 
   def new

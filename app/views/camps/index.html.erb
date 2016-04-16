@@ -27,11 +27,9 @@
     </div>
   <% end %>
 
-<% shuffled_camps = @camps.shuffle %>
-
 <div class="camps_list">
 
-  <% shuffled_camps.each do |camp| %>
+  <% @camps.each do |camp| %>
   <a href="<%= url_for(camp) %>">
     <div class="camp_card">
 
