@@ -2,7 +2,16 @@ class CampsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @camps = Camp.all.order('updated_at DESC').page(params[:page])
+    @filterrific = initialize_filterrific(
+      Camp,
+      params[:filterrific]
+    ) or return
+    @camps = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
