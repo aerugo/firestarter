@@ -32,13 +32,5 @@ class User < ActiveRecord::Base
       end
     end
   end
-
-  validate :grants_under_9
-
-  def grants_under_9
-    unless self.grants < 9
-      self.errors.add(:grants, "Oops. You have more than 8 grants.")
-    end
-  end
   
 end

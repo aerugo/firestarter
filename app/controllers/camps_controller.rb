@@ -43,12 +43,27 @@ class CampsController < ApplicationController
     # of grants given away. Increase the number of grants assigned to the
     # camp by the same number of grants.
 
-    # Decrement user grants.
+    # Decrement user grants. Check first if granting more than needed.
     granted = params['grants'].to_i
+    if @camp.grants_received + granted > @camp.maxbudget
+      granted = @camp.maxbudget - @camp.grants_received
+    end
     current_user.grants -= granted
 
     # Increase camp grants.
     @camp.grants_received += granted
+
+    if @camp.grants_received >= @camp.minbudget
+      @camp.minfunded = true
+    else
+      @camp.minfunded = false
+    end
+
+    if @camp.grants_received >= @camp.maxbudget
+      @camp.fullyfunded = true
+    else
+      @camp.fullyfunded = false
+    end
 
     unless current_user.save
       flash[:notice] = "Errors: #{current_user.errors.full_messages.join(', ')}"
