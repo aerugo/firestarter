@@ -18,6 +18,16 @@
   background: $c-red;
 }
 
+.toggle_button {
+  @extend %button;
+  background: $c-blue;
+}
+
+.granting_button {
+  @extend %button;
+  background: $c-blue;
+}
+
 .submit_button {
   @extend %button;
   color: $c-green;

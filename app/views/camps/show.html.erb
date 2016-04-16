@@ -173,12 +173,26 @@
         <br>
         <% end %>
 
-        <!-- Temporarily hiding granting system -->
-        <% if Rails.configuration.x.firestarter_settings["granting_active"] and @camp.minbudget %>
+        <!-- Granting system -->
+        <% if @camp.grantingtoggle %>
+          <% button_text = "Turn off granting" %>
+        <% else %>
+          <% button_text = "Enable granting" %>
+        <% end %>
 
+        <% if current_user && (current_user.guide || current_user.admin) %>
+          <%= form_tag({controller: "camps", action: "toggle_granting"}, method: "patch") do %>
+            <%= submit_tag button_text, :class => "btn btn-primary" %>
+          <% end %>
+        <% end %>
+
+        <!-- Granting system -->
+        <% if Rails.configuration.x.firestarter_settings["granting_active"] and @camp.minbudget and @camp.grantingtoggle %>
+          
           <li><span>
-            <b>Grants Received:</b> <%= @camp.grants_received %>
+            <p><b>Grants Received:</b> <%= @camp.grants_received %></p>
           </span></li>
+
 
           <li><span>
             <% grants_to_go_minimum = @camp.minbudget - @camp.grants_received %>
@@ -211,7 +225,7 @@
             <%= form_tag({controller: "camps", action: "update_grants"}, method: "patch") do %>
               <%= label_tag 'Give Grants' %>
               <%= number_field_tag 'grants', nil, in: 0..current_user.grants, step: 1 %>
-              <%= submit_tag 'I gift thee these grants.'%>
+              <%= submit_tag 'I gift thee these grants.', :class => "btn btn-primary" %>
             <% end %>
           <% end %>
 
@@ -238,11 +252,9 @@
         <% end %>
 
         <% if current_user && (@camp.creator == current_user || current_user.admin) %>
-          <div class="delete-button">
-            <%= form_for @camp, method: :delete do |f| %>
-              <%= f.submit 'Delete this creation', class: "btn btn-danger" , data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </div>
+          <%= form_for @camp, method: :delete do |f| %>
+            <%= f.submit 'Delete this creation', class: "btn btn-danger" , data: { confirm: 'Are you sure?' } %>
+          <% end %>
         <% end %>
 
     </ul>

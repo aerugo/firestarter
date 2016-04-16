@@ -27,6 +27,14 @@ class CampsController < ApplicationController
     end
   end
 
+  # Toggle granting
+
+  def toggle_granting
+    @camp = Camp.find(params[:id])
+    @camp.toggle!(:grantingtoggle)
+    redirect_to camp_path(@camp)
+  end
+
   # Handle the grant updates in their own controller action
   def update_grants
     @camp = Camp.find(params[:id])
