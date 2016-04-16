@@ -32,15 +32,16 @@
 }
 
 .header-nav {
-  justify-content: flex-start;
   display: inline-block;
-  width: 100%;
   margin-bottom: 10px;
   font-family: 'Dosis', sans-serif;
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: space-around; /* Safari 6.1+ */
+  display: flex;
+  justify-content: space-around;
 
   a {
     margin-left: 15px;
-    float: right;
     font-size: 24px;
     font-weight: 500;
   }
