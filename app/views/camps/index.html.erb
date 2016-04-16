@@ -30,7 +30,7 @@
 
 <div class="camps_list">
 
-  <% @camps.reverse.each do |camp| %>
+  <% @camps.shuffle.each do |camp| %>
   <a href="<%= url_for(camp) %>">
     <div class="camp_card">
 
