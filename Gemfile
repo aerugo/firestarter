@@ -49,6 +49,9 @@ gem 'pundit'
 # Image gallery
 gem 'blueimp-gallery'
 
+# Search and sort
+gem 'kaminari-bootstrap'
+
 group :production do
   # needed by herokus
   gem 'rails_12factor'
