@@ -49,9 +49,12 @@ gem 'pundit'
 # Image gallery
 gem 'blueimp-gallery'
 
-# Search and sort
+# Pagination
 gem 'kaminari-bootstrap'
 gem 'kaminari'
+
+# Filtering
+gem 'filterrific'
 
 group :production do
   # needed by herokus

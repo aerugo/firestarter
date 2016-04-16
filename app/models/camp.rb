@@ -10,4 +10,7 @@ class Camp < ActiveRecord::Base
   validates :subtitle, presence: true
   validates :contact_email, presence: true
   validates :contact_name, presence: true
+
+  scope :fullyfunded, -> { where(fullyfunded: false) }
+
 end
