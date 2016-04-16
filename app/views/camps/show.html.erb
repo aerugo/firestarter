@@ -223,7 +223,7 @@
           <!-- Show a form with a drop-down containing user grants -->
           <!-- Current iteration shows a number field -->
 
-          <% if current_user && current_user.grants > 0 %>
+          <% if current_user && current_user.grants > 0 && !@camp.fullyfunded %>
             <%= form_tag({controller: "camps", action: "update_grants"}, method: "patch") do %>
               <%= label_tag 'Give Grants' %>
               <%= number_field_tag 'grants', nil, in: 0..current_user.grants, step: 1 %>
