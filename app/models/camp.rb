@@ -24,7 +24,30 @@ class Camp < ActiveRecord::Base
 	# Scope definitions. We implement all Filterrific filters through ActiveRecord
 	# scopes. In this example we omit the implementation of the scopes for brevity.
 	# Please see 'Scope patterns' for scope implementation details.
-	scope :search_query, lambda { |query| }
+	  scope :search_query, lambda { |query|
+	    return nil  if query.blank?
+	    # condition query, parse into individual keywords
+	    terms = query.downcase.split(/\s+/)
+	    # replace "*" with "%" for wildcard searches,
+	    # append '%', remove duplicate '%'s
+	    terms = terms.map { |e|
+	      (e.gsub('*', '%') + '%').gsub(/%+/, '%')
+	    }
+	    # configure number of OR conditions for provision
+	    # of interpolation arguments. Adjust this if you
+	    # change the number of OR conditions.
+	    num_or_conditions = 2
+	    where(
+	      terms.map {
+	        or_clauses = [
+	          "LOWER(camps.name) LIKE ?",
+	          "LOWER(camps.subtitle) LIKE ?"
+	        ].join(' OR ')
+	        "(#{ or_clauses })"
+	      }.join(' AND '),
+	      *terms.map { |e| [e] * num_or_conditions }.flatten
+	    )
+	  }
 
 	scope :sorted_by, lambda { |sort_option|
 	    # extract the sort direction from the param value.
