@@ -43,6 +43,7 @@ button {
 button {
   cursor: pointer;
   color: $c-green;
+  width: 140px;
 }
 
 address {
@@ -77,7 +78,7 @@ input[type=password] {
 
 input[type=submit] {
   @extend %button;
-  width: 100%;
+  width: 140px;
   margin-top: 15px;
   cursor: pointer;
 }
@@ -96,4 +97,11 @@ input[type=checkbox] {
 
 .membership_id_info {
   margin-top: 15px;
+}
+
+.camp-button {
+  @extend %button;
+  width: 140px;
+  margin-top: 15px;
+  cursor: pointer;
 }

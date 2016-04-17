@@ -4,60 +4,61 @@
   <%= javascript_include_tag 'blueimp_script' %> 
 <% end %>
 
-
-<% if !user_signed_in? %>
-  <div class="row top_message">
-    <div class="panel panel-default coverphoto-panel">
-      <div class="panel-heading">
-        <%=t :welcome_guest_title %>
-      </div>
-      <div class="panel-body">
-        <p><%=t :welcome_guest_text_html %></p>
-      </div>
-    </div>
-  </div>
-  <% else %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
+<div class="row top_message">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <% if user_signed_in? %>
         <%=t :welcome_user_title %>
+      <% else %>
+        <%=t :welcome_guest_title %>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-8">
+        <% if user_signed_in? %>
+          <%=t :welcome_user_text_html %>
+        <% else %>
+          <%=t :welcome_guest_text_html %>
+        <% end %>
       </div>
-      <div class="panel-body">
-        <p><%=t :welcome_user_text_html %></p>
+      <div class="col-md-4">
+        <%= form_for_filterrific @filterrific do |f| %>
+
+        <p><b>Search and filter results</b></p>
+
+        <div>
+          Search
+          <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+          <%= f.text_field(
+            :search_query,
+            class: 'filterrific-periodically-observed'
+          ) %>
+        </div>
+
+        <br>
+
+        <div class="form-inline">
+          <%= f.check_box(:not_fully_funded, class: 'filterrific-periodically-observed checkbox') %>
+          Hide fully funded
+        </div>
+
+        <div class="form-inline">
+          <%= f.check_box(:not_min_funded, class: 'filterrific-periodically-observed checkbox') %>
+          Hide minimum funded
+        </div>
+
+        <div class="form-inline">
+          <%= f.check_box(:not_seeking_funding, class: 'filterrific-periodically-observed checkbox') %>
+          Hide not open for granting
+        </div>
+
+        <%= render_filterrific_spinner %>
+
+        <% end %>
       </div>
     </div>
-  <% end %>
-
-<%= form_for_filterrific @filterrific do |f| %>
-
-<div class="form-inline">
-
-  <div class="form-group">
-    Hide fully funded
-    <%= f.check_box(:not_fully_funded, class: 'filterrific-periodically-observed form-control') %>
   </div>
-
-  <div class="form-group">
-    Hide minimum funded
-    <%= f.check_box(:not_min_funded, class: 'filterrific-periodically-observed form-control') %>
-  </div>
-
-  <div class="form-group">
-    Hide not open for granting
-    <%= f.check_box(:not_seeking_funding, class: 'filterrific-periodically-observed form-control') %>
-  </div>
-
-  <div class="form-group">
-    <%= link_to(
-      'Reset filters',
-      reset_filterrific_url,
-    ) %>
-  </div>
-
 </div>
-
-  <%# add an automated spinner to your form when the list is refreshed %>
-  <%= render_filterrific_spinner %>
-<% end %>
 
 <%= render(
   partial: 'camps/list',
