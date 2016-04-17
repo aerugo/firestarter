@@ -194,7 +194,7 @@
               <%= form_tag({controller: "camps", action: "update_grants"}, method: "patch") do %>
                 <%= label_tag 'Give Grants' %>
                 <%= number_field_tag 'grants', nil, in: 0..current_user.grants, step: 1 %>
-                <%= submit_tag 'I gift thee grants!', :class => "btn btn-success" %>
+                <%= submit_tag 'I gift thee grants', :class => "btn btn-success" %>
               <% end %>
               </span></h3>
             <% end %>
@@ -273,7 +273,7 @@
           <% if @camp.creator != current_user %>
             <li><b><%=t :cocreator_application_guidetext %></b></li>
             <div class="join_creation">
-              <%= button_to "Add my name to the list!", {action: "join", user: current_user }, {class: 'btn btn-success'} %>
+              <%= button_to "Add my name", {action: "join", user: current_user }, {class: 'btn btn-success button'} %>
             </div>
           <% end %>
 
