@@ -1,6 +1,8 @@
 <%# app/views/students/_list.html.erb %>
 <div id="filterrific_results">
 
+  <%= filterrific_sorting_link(@filterrific, :updated_at) %>
+
   <div class="camps_list col-xs-12">
 
     <% @camps.each do |camp| %>
@@ -26,9 +28,8 @@
     <% end %>
   </div>
 
-</div>
-
-
 <div class="row top_message" align="center">
   <div class="col-xm-12"><%= paginate @camps %></div>
+</div>
+
 </div>

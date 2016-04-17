@@ -12,7 +12,7 @@ class Camp < ActiveRecord::Base
 	validates :contact_name, presence: true
 
 	filterrific(
-	default_filter_params: { sorted_by: 'created_at_desc' },
+	default_filter_params: { sorted_by: 'updated_at_desc' },
 	available_filters: [
 	  :sorted_by,
 	  :search_query,
@@ -26,7 +26,26 @@ class Camp < ActiveRecord::Base
 	# Please see 'Scope patterns' for scope implementation details.
 	scope :search_query, lambda { |query| }
 
-	scope :sorted_by, lambda { |sort_key| }
+	scope :sorted_by, lambda { |sort_option|
+	    # extract the sort direction from the param value.
+	    direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
+
+	    case sort_option.to_s
+	    when /^name/
+	       # Simple sort on the created_at column.
+	       # Make sure to include the table name to avoid ambiguous column names.
+	       # Joining on other tables is quite common in Filterrific, and almost
+	       # every ActiveRecord table has a 'created_at' column.
+	       order("camps.name #{ direction }")
+	    when /^updated_at_/
+	       order("camps.updated_at #{ direction }")
+	    when /^created_at_/
+	       order("camps.created_at #{ direction }")
+	       raise(ArgumentError, "Sort option: #{ sort_option.inspect }")
+	    else
+	       raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
+	    end
+	}
 
 	scope :not_fully_funded, lambda { |flag|
 		return nil  if '0' == flag # checkbox unchecked
