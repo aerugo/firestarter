@@ -10,16 +10,16 @@
     <a href="<%= url_for(camp) %>">
       <div class="camp_card">
 
-        <%# if camp.images.any? %>
-        <%# camp.images.each_with_index do |image, index| %>
-        <%# if index == 0 %>
-        <%# image_path = camp_image_path(camp_id: camp.id, id: image.id) %>
+        <% # if camp.images.any? %>
+        <% # camp.images.each_with_index do |image, index| %>
+        <% # if index == 0 %>
+        <% # image_path = camp_image_path(camp_id: camp.id, id: image.id) %>
         <!-- div class="camp_card-img" style="background-image:url('<%= image_path %>')" --><!-- /div -->
-        <%# end %>
-        <%# end %>
-        <%# else %>
+        <% # end %>
+        <% # end %>
+        <% # else %>
         <div class="camp_card-img" style="background-image:url(<%= asset_path 'bsb_placeholder.jpg' %>)"></div>
-        <%# end %>
+        <% # end %>
 
         <% id = camp.id %>
         <h1><%= truncate(camp.name, length: 50) %></h1>
