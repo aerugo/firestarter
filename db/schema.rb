@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416175833) do
+ActiveRecord::Schema.define(version: 20160427212030) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 20160416175833) do
     t.text     "ticket_id"
     t.boolean  "guide",                  default: false
     t.boolean  "admin",                  default: false
-    t.integer  "grants",                 default: 8
+    t.integer  "grants",                 default: 10
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
