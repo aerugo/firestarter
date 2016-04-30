@@ -20,27 +20,27 @@
     </div>
 
     <div id="links">
-        <% @camp.images.each_with_index do |image, index| %>
-        <% status = "" %>
-        <% if index == 0 %>
-        <% status = "active" %>
-        <% end %>
-        <% image_path = camp_image_path(camp_id: @camp.id, id: image.id) %>
+      <% @camp.images.each_with_index do |image, index| %>
+      <% status = "" %>
+      <% if index == 0 %>
+      <% status = "active" %>
+      <% end %>
+      <% image_path = camp_image_path(camp_id: @camp.id, id: image.id) %>
 
-        <div class="thumbnail">
-          <a href="<%= image_path %>">
-            <img src="<%= image_path %>">
-          </a>
-        </div>
+      <div class="thumbnail">
+        <a href="<%= image_path %>">
+          <img src="<%= image_path %>">
+        </a>
+      </div>
 
-        <% end %>
+      <% end %>
 
     </div>
 
     <% content_for(:head) do %>
-      <% browser_title = @camp.name + " - " + t(:browser_title_tag) %>
-      <title><%= browser_title %></title>
-      <%= javascript_include_tag 'blueimp_script' %> 
+    <% browser_title = @camp.name + " - " + t(:browser_title_tag) %>
+    <title><%= browser_title %></title>
+    <%= javascript_include_tag 'blueimp_script' %> 
     <% end %>
 
     <!-- Creation text content -->
@@ -50,38 +50,38 @@
     </div>
 
     <% if Rails.configuration.x.firestarter_settings["description"] and @camp.description != "" %>
-      <div class="camp-description">
-        <b><%=t :form_description_label %></b>
-        <p><%= simple_format(@camp.description) %></p>
-      </div>
+    <div class="camp-description">
+      <b><%=t :form_description_label %></b>
+      <p><%= simple_format(@camp.description) %></p>
+    </div>
     <% end %>
 
     <% if Rails.configuration.x.firestarter_settings["plan"] and @camp.plan != "" %>
-      <div class="camp-description">
-        <b><%=t :form_plan_label %></b>
-        <p><%= simple_format(@camp.plan) %></p>
-      </div>
+    <div class="camp-description">
+      <b><%=t :form_plan_label %></b>
+      <p><%= simple_format(@camp.plan) %></p>
+    </div>
     <% end %>
 
     <% if Rails.configuration.x.firestarter_settings["moop"] and @camp.moop != "" %>
-      <div class="camp-description">
-        <b><%=t :form_moop_label %></b>
-        <p><%= simple_format(@camp.moop) %></p>
-      </div>
+    <div class="camp-description">
+      <b><%=t :form_moop_label %></b>
+      <p><%= simple_format(@camp.moop) %></p>
+    </div>
     <% end %>
 
     <% if Rails.configuration.x.firestarter_settings["budgetplan"] and @camp.budgetplan != "" %>
-      <div class="camp-description">
-        <b><%=t :form_budgetplan_label %></b>
-        <p><%= simple_format(@camp.budgetplan) %></p>
-      </div>
+    <div class="camp-description">
+      <b><%=t :form_budgetplan_label %></b>
+      <p><%= simple_format(@camp.budgetplan) %></p>
+    </div>
     <% end %>
 
     <% if Rails.configuration.x.firestarter_settings["cocreation"] and @camp.cocreation != "" %>
-      <div class="camp-description">
-        <b><%=t :form_cocreation_label %></b>
-        <p><%= simple_format(@camp.cocreation) %></p>
-      </div>
+    <div class="camp-description">
+      <b><%=t :form_cocreation_label %></b>
+      <p><%= simple_format(@camp.cocreation) %></p>
+    </div>
     <% end %>
 
   </div> <!-- col-md-8 -->
@@ -93,121 +93,122 @@
     <div class="panel-heading"><%=t :what_is_this_title %></div>
     <div class="panel-body">
       <p><%=t :what_is_this_text_html %></p>
-      </div>
     </div>
+  </div>
   <% end %>
 
-    <div class="creation-info">
-      <ul>
-        <li><span><h2 class="header-sub-heading"><%=t :creation_info_headline %></h2></span></li>
+  <% random = Camp.order("RANDOM()").first %>
+  <a href="<%= url_for(random) %>" class="btn btn-primary camp-button" role="button"> 
+    Next random dream <span class="glyphicon glyphicon-random" aria-hidden="true"></span> 
+  </a>
 
-        <li>
-          <% random = Camp.order("RANDOM()").first %>
-          <a href="<%= url_for(random) %>" class="btn btn-primary" role="button"> Stumble to another dream </a>
-        </li>
+  <div class="creation-info">
+    <ul>
 
-        <% if current_user && @camp.creator == current_user %>
-          <li><span>
-              <a href="<%= edit_camp_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Edit creation</a>
-          </li></span>
-          <li><span>
-            <a href="<%= camp_images_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Manage images</a>
-          </li></span>
-        <% end %>
+      <li><span><h2 class="header-sub-heading"><%=t :creation_info_headline %></h2></span></li>
 
-        <br>
+      <% if current_user && @camp.creator == current_user %>
+      <li><span>
+        <a href="<%= edit_camp_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Edit creation</a>
+      </li></span>
+      <li><span>
+        <a href="<%= camp_images_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Manage images</a>
+      </li></span>
+      <% end %>
 
-        <li><span><b>Contact Name:</b> <%= @camp.contact_name %></span></li>
-        <br>
+      <br>
 
-        <% if current_user && current_user.guide %>
-          <li><span><b>Contact Email:</b> <%= @camp.contact_email %></span></li>
+      <li><span><b>Contact Name:</b> <%= @camp.contact_name %></span></li>
+      <br>
 
-        <br>
-        <% end %>
+      <% if current_user && current_user.guide %>
+      <li><span><b>Contact Email:</b> <%= @camp.contact_email %></span></li>
 
-        <!-- Granting system -->
-        <% if @camp.grantingtoggle %>
-          <% button_text = "Turn off granting" %>
+      <br>
+      <% end %>
+
+      <!-- Granting system -->
+      <% if @camp.grantingtoggle %>
+      <% button_text = "Turn off granting" %>
+      <% else %>
+      <% button_text = "Enable granting" %>
+      <% end %>
+
+      <% if current_user && (current_user.guide || current_user.admin) %>
+      <%= form_tag({controller: "camps", action: "toggle_granting"}, method: "patch") do %>
+      <%= submit_tag button_text, :class => "btn btn-primary" %>
+      <% end %>
+      <% end %>
+
+      <!-- Granting system -->
+      <% if Rails.configuration.x.firestarter_settings["granting_active"] and @camp.minbudget %>
+
+      <li><span>
+
+        <% if @camp.minbudget <= @camp.grants_received %>
+        <% if @camp.maxbudget <= @camp.grants_received %>
+        <h3><span class="label label-success granting-label">
+          <b>Fully funded</b>
+        </span></h3>
         <% else %>
-          <% button_text = "Enable granting" %>
+        <h3><span class="label label-success granting-label">
+          <b>Minimum funding reached</b>
+        </span></h3>
+        <% end %>
+        <% else %>
+        <h3><span class="label label-warning granting-label">
+          <b>Not funded yet</b>
+        </span></h3>
         <% end %>
 
-        <% if current_user && (current_user.guide || current_user.admin) %>
-          <%= form_tag({controller: "camps", action: "toggle_granting"}, method: "patch") do %>
-            <%= submit_tag button_text, :class => "btn btn-primary" %>
-          <% end %>
+        <h3><span class="label label-info granting-label">
+          <b>Minimum grants needed </b>
+          <span class="badge"><%= @camp.minbudget %></span>
+        </span></h3>
+
+        <h3><span class="label label-info granting-label">
+          <b>Needed to fully fund </b>
+          <span class="badge"><%= @camp.maxbudget %></span>
+        </span></h3>
+
+        <h3><span class="label label-info granting-label">
+          <b>Grants recieved </b>
+          <span class="badge"><%= @camp.grants_received %></span>
+        </span></h3>
+
+        <!-- Show user grants left -->
+        <% if current_user and @camp.minbudget %>
+        <% if current_user.grants > 0 %>
+        <h3><span class="label label-success granting-label">
+          <b>Your available grants </b>
+          <span class="badge"><%= current_user.grants %></span>
+        </span></h3>
+        <% else %>
+        <h3><span class="label label-warning granting-label">
+          <b>You're out of grants </b>
+        </span></h3>
+        <% end %>
         <% end %>
 
-        <!-- Granting system -->
-        <% if Rails.configuration.x.firestarter_settings["granting_active"] and @camp.minbudget %>
+        <!-- If user grants are > 0, allow user to asign them -->
+        <!-- Show a form with a drop-down containing user grants -->
+        <!-- Current iteration shows a number field -->
 
-          <li><span>
-
-            <% if @camp.minbudget <= @camp.grants_received %>
-              <% if @camp.maxbudget <= @camp.grants_received %>
-                <h3><span class="label label-success granting-label">
-                  <b>Fully funded</b>
-                </span></h3>
-              <% else %>
-                <h3><span class="label label-success granting-label">
-                  <b>Minimum funding reached</b>
-                </span></h3>
-              <% end %>
-            <% else %>
-              <h3><span class="label label-warning granting-label">
-                <b>Not funded yet</b>
-              </span></h3>
-            <% end %>
-
-            <h3><span class="label label-info granting-label">
-              <b>Minimum grants needed </b>
-              <span class="badge"><%= @camp.minbudget %></span>
-            </span></h3>
-
-            <h3><span class="label label-info granting-label">
-              <b>Needed to fully fund </b>
-              <span class="badge"><%= @camp.maxbudget %></span>
-            </span></h3>
-
-            <h3><span class="label label-info granting-label">
-              <b>Grants recieved </b>
-              <span class="badge"><%= @camp.grants_received %></span>
-            </span></h3>
-
-          <!-- Show user grants left -->
-          <% if current_user and @camp.minbudget %>
-            <% if current_user.grants > 0 %>
-              <h3><span class="label label-success granting-label">
-                <b>Your available grants </b>
-                <span class="badge"><%= current_user.grants %></span>
-              </span></h3>
-            <% else %>
-              <h3><span class="label label-success granting-label">
-                <b>You've used all your grants, good work! </b>
-              </span></h3>
-            <% end %>
+        <% if @camp.grantingtoggle %>
+        <% if current_user && current_user.grants > 0 && !@camp.fullyfunded %>
+        <h3><span class="label label-primary granting-label">
+          <%= form_tag({controller: "camps", action: "update_grants"}, method: "patch") do %>
+          <%= label_tag 'Give Grants' %>
+          <%= number_field_tag 'grants', nil, in: 0..current_user.grants, step: 1 %>
+          <%= submit_tag 'I gift thee grants', :class => "btn btn-success" %>
           <% end %>
-
-          <!-- If user grants are > 0, allow user to asign them -->
-          <!-- Show a form with a drop-down containing user grants -->
-          <!-- Current iteration shows a number field -->
-
-          <% if @camp.grantingtoggle %>
-            <% if current_user && current_user.grants > 0 && !@camp.fullyfunded %>
-              <h3><span class="label label-primary granting-label">
-              <%= form_tag({controller: "camps", action: "update_grants"}, method: "patch") do %>
-                <%= label_tag 'Give Grants' %>
-                <%= number_field_tag 'grants', nil, in: 0..current_user.grants, step: 1 %>
-                <%= submit_tag 'I gift thee grants', :class => "btn btn-success" %>
-              <% end %>
-              </span></h3>
-            <% end %>
-          <% else %>
-            <h3><span class="label label-warning granting-label">
-              <b>No granting for this dream yet! </b>
-            </span></h3>
-          <% end %>
+        </span></h3>
+        <% end %>
+        <% else %>
+        <h3><span class="label label-warning granting-label">
+          <b>No granting for this dream yet! </b>
+        </span></h3>
+        <% end %>
 
         <br>
         <% end %>
@@ -274,34 +275,34 @@
         <% end %>
 
         <% if Rails.configuration.x.firestarter_settings["add_to_list"] %>
-          <br>
-          <% if @camp.creator != current_user %>
-            <li><b><%=t :cocreator_application_guidetext %></b></li>
-            <div class="join_creation">
-              <%= button_to "Add my name", {action: "join", user: current_user }, {class: 'btn btn-success button'} %>
-            </div>
-          <% end %>
+        <br>
+        <% if @camp.creator != current_user %>
+        <li><b><%=t :cocreator_application_guidetext %></b></li>
+        <div class="join_creation">
+          <%= button_to "Add my name", {action: "join", user: current_user }, {class: 'btn btn-success button'} %>
+        </div>
+        <% end %>
 
-          <% if current_user && (@camp.creator == current_user || current_user.guide) %>
-            <br>
-            <li><span><b><%=t :cocreators_list_guidetext %></b>
-              <% @users.each do |user| %>
-              <%= user.email %><br>
-              <% end %>
-            </span></li>
+        <% if current_user && (@camp.creator == current_user || current_user.guide) %>
+        <br>
+        <li><span><b><%=t :cocreators_list_guidetext %></b>
+          <% @users.each do |user| %>
+          <%= user.email %><br>
           <% end %>
+        </span></li>
+        <% end %>
         <% end %>
 
         <% if current_user && (@camp.creator == current_user || current_user.admin) %>
-          <%= form_for @camp, method: :delete do |f| %>
-            <%= f.submit 'Delete this creation', class: "btn btn-danger" , data: { confirm: 'Are you sure?' } %>
-          <% end %>
+        <%= form_for @camp, method: :delete do |f| %>
+        <%= f.submit 'Delete this creation', class: "btn btn-danger" , data: { confirm: 'Are you sure?' } %>
+        <% end %>
         <% end %>
 
-    </ul>
+      </ul>
 
-  </div> <!-- creation-info -->
+    </div> <!-- creation-info -->
 
-</div> <!-- col-md-3 -->
+  </div> <!-- col-md-3 -->
 
 </div> <!-- row -->
