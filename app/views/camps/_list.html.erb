@@ -8,14 +8,55 @@
 
     <% @camps.each do |camp| %>
     <a href="<%= url_for(camp) %>">
-      <div class="camp_card">
-        <div class="camp_card-img" style="background-image:url(<%= asset_path 'bsb_placeholder.jpg' %>)"></div>
-        <% id = camp.id %>
-        <h1><%= truncate(camp.name, length: 50) %></h1>
-        <span class="camp_card-desc"><%= truncate(camp.subtitle, length: 130) %></span>
+
+     <div class="panel panel-info">
+
+        <div class="panel-heading">
+          <h1><%= truncate(camp.name, length: 50) %></h1>
+        </div>
+          
+        <div class="panel-body camp-index">
+
+          <div class="description">
+            <p><%= truncate(camp.subtitle, length: 250) %></p>
+          </div>
+
+            <div class="labels">
+              <% if Rails.configuration.x.firestarter_settings["granting_active"] and camp.minbudget %>
+
+                <% if camp.grantingtoggle %>
+                  <% if camp.minbudget <= camp.grants_received %>
+                    <% if camp.maxbudget <= camp.grants_received %>
+                      <h3><span class="label label-success granting-label">
+                        <b>Fully funded</b>
+                      </span></h3>
+                    <% else %>
+                      <h3><span class="label label-success granting-label">
+                        <b>Minimum funding reached</b>
+                      </span></h3>
+                    <% end %>
+                  <% else %>
+                    <h3><span class="label label-warning granting-label">
+                      <b>Not funded yet</b>
+                    </span></h3>
+                  <% end %>
+
+                  <h3><span class="label label-info granting-label">
+                    <b>Grants recieved </b>
+                    <span class="badge"><%= camp.grants_received %></span>
+                  </span></h3>
+                <% else %>
+                  <h3><span class="label label-warning granting-label">
+                    <b>Granting not enabled </b>
+                  </span></h3>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
       </div>
     </a>
     <% end %>
+
   </div>
 
 <div class="row top_message" align="center">
