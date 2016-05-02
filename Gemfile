@@ -56,6 +56,10 @@ gem 'kaminari'
 # Filtering
 gem 'filterrific'
 
+# Images at S3
+gem 'paperclip'
+gem 'aws-sdk'
+
 group :production do
   # needed by herokus
   gem 'rails_12factor'
