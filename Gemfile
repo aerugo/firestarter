@@ -60,6 +60,7 @@ gem 'filterrific'
 gem 'paperclip'
 gem 'aws-sdk'
 
+
 group :production do
   # needed by herokus
   gem 'rails_12factor'
@@ -72,6 +73,8 @@ group :development, :test do
   gem 'byebug'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  # For environment vars
+  gem 'dotenv-rails'
 end
 
 group :development do
