@@ -1,6 +1,6 @@
 class AddAttachmentToImages < ActiveRecord::Migration
   def self.up
-    add_attachment :images, :attachment
+    add_attachment :images, :attachment, :after => :camp_id
   end
 
   def self.down

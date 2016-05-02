@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427212030) do
+ActiveRecord::Schema.define(version: 20160502195942) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -83,6 +83,10 @@ ActiveRecord::Schema.define(version: 20160427212030) do
     t.integer  "camp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "memberships", force: :cascade do |t|
