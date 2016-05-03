@@ -60,7 +60,6 @@ gem 'filterrific'
 gem 'paperclip'
 gem 'aws-sdk'
 
-
 group :production do
   # needed by herokus
   gem 'rails_12factor'

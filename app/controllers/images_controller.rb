@@ -3,16 +3,16 @@ class ImagesController < ApplicationController
   before_filter :camp_id
 
   def index
-    @images = Image.where camp_id: @camp_id
+    @images = Image.where(camp_id: @camp_id)
   end
 
   def show
-    image = Image.find_by_id params[:id]
+    image = Image.find_by_id(params[:id])
     send_data image.image, disposition: :inline
   end
 
   def create
-    @image         = Image.new(image_params)
+    @image = Image.new(image_params)
     @image.user_id = current_user.id
 
     if @image.save
@@ -23,7 +23,7 @@ class ImagesController < ApplicationController
   end
 
   def destroy
-    @image = Image.find_by_id( params[:id] )
+    @image = Image.find_by_id(params[:id])
     @image.attachment = nil
     @image.save!
     @image.destroy!
