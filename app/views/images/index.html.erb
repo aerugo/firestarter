@@ -5,7 +5,7 @@
 <div class="row">
     <% @images.each do |image| %>
         <div class="camp-image">
-            <% image_url = image.attachment.url(:medium) %>
+            <% image_url = image.attachment.url(:large) %>
             <%= image_tag(image_url) %>
             <%= form_for image, url: camp_image_path(image.camp_id, image),  method: :delete do |form| %>
                 <%= form.submit 'Remove image', { class: 'delete_button' } %>
