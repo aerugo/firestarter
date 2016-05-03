@@ -59,6 +59,7 @@ gem 'filterrific'
 # Images at S3
 gem 'paperclip'
 gem 'aws-sdk', '< 2'
+gem 'rmagick'
 
 group :production do
   # needed by herokus
