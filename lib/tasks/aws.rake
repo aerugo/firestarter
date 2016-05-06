@@ -10,6 +10,8 @@ namespace :aws do
 
         i.attachment = sio
         i.save
+
+        sio.truncate(0)
       end
     end
   end
