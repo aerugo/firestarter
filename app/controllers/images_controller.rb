@@ -8,7 +8,7 @@ class ImagesController < ApplicationController
 
   def show
     image = Image.find_by_id(params[:id])
-    send_data image.image, disposition: :inline
+    #send_data image.image, disposition: :inline
   end
 
   def create
