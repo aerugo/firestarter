@@ -1,6 +1,8 @@
 namespace :aws do
   task :migrate => :environment do
-    Image.all.each do |i|
+    Image.pluck(:id).each do |iid|
+      i = Image.find(iid)
+
       if i.image
         sio = StringIO.new(i.image)
         sio.class.class_eval { attr_accessor :original_filename, :content_type }
