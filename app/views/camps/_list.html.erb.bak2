@@ -20,13 +20,11 @@
                         <% if camp.images.any? %>
                             <% camp.images.each_with_index do |image, index| %>
                                 <% if index == 0 %>
-                                    <% image_url = image.attachment.url(:medium) %>
-                                    <% image_path = camp_image_path(camp_id: camp.id, id: image.id) %>
-                                    <div class="camp_card-img" style="background-image:url('<%= image_url %>')"></div>
+                                    <%= image_tag(image.attachment.url(:square)) %>
                                 <% end %>
                             <% end %>
                         <% else %>
-                            <div class="camp_card-img" style="background-image:url(<%= asset_path 'bsb_placeholder.jpg' %>)"></div>
+                            <%= image_tag('bsb_placeholder_square.jpg') %>
                         <% end %>
 
                         <div class="description">
