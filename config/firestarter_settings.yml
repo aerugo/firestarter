@@ -13,10 +13,10 @@ defaults: &defaults
   neighbors: true
   budgetplan: true
   seeking_members: true
-  granting: true
-  user_authentication_codes: true
+  granting: false
+  user_authentication_codes: false
   add_to_list: true
-  granting_active: true
+  granting_active: false
   footer_text: false
   footer_logo: false
   creation_sidebar_welcome: true
