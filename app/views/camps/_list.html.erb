@@ -8,57 +8,21 @@
 
         <% @camps.each do |camp| %>
             <a href="<%= url_for(camp) %>">
-
-                <div class="panel panel-info">
-
-                    <div class="panel-heading">
-                        <h1><%= truncate(camp.name, length: 50) %></h1>
-                    </div>
-
-                    <div class="panel-body camp-index">
-
-                        <% if camp.images.any? %>
-                            <%= image_tag(camp.images.first.attachment.url(:square)) %>
-                        <% else %>
-                            <%= image_tag('bsb_placeholder_square.jpg') %>
-                        <% end %>
-
-                        <div class="description">
-                            <p><%= truncate(camp.subtitle, length: 250) %></p>
-                        </div>
-
-                        <div class="labels">
-                            <% if Rails.configuration.x.firestarter_settings["granting_active"] and camp.minbudget %>
-
-                                <% if camp.grantingtoggle %>
-                                    <% if camp.minbudget <= camp.grants_received %>
-                                        <% if camp.maxbudget <= camp.grants_received %>
-                                            <h3><span class="label label-success granting-label">
-                                                <b>Fully funded</b>
-                                            </span></h3>
-                                        <% else %>
-                                            <h3><span class="label label-success granting-label">
-                                                <b>Minimum funding reached</b>
-                                            </span></h3>
-                                        <% end %>
-                                    <% else %>
-                                        <h3><span class="label label-warning granting-label">
-                                            <b>Not funded yet</b>
-                                        </span></h3>
-                                    <% end %>
-
-                                    <h3><span class="label label-info granting-label">
-                                        <b>Grants recieved </b>
-                                        <span class="badge"><%= camp.grants_received %></span>
-                                    </span></h3>
-                                <% else %>
-                                    <h3><span class="label label-warning granting-label">
-                                        <b>Granting not enabled </b>
-                                    </span></h3>
-                                <% end %>
-                            <% end %>
-                        </div>
-                    </div>
+                <div class="camp_card">
+                  <% if camp.images.any? %>
+                    <% camp.images.each_with_index do |image, index| %>
+                      <% if index == 0 %>
+                        <% image_path = camp_image_path(camp_id: camp.id, id: image.id) %>
+                        <div class="camp_card-img" style="background-image:url('<%= image_path %>')"></div>
+                      <% end %>
+                    <% end %>
+                  <% else %>
+                    <div class="camp_card-img" style="background-image:url('http://placehold.it/750x400')"></div>
+                  <% end %>
+            
+                  <% id = camp.id %>
+                  <h1><%= truncate(camp.name, length: 50) %></h1>
+                  <span class="camp_card-desc"><%= truncate(camp.description, length: 130) %></span>
                 </div>
             </a>
         <% end %>
