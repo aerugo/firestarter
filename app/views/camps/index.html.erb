@@ -24,7 +24,7 @@
       <div class="col-md-4">
         <%= form_for_filterrific @filterrific do |f| %>
 
-        <p><b>Search and filter results</b></p>
+        <p><b>Sök efter aktiviteter</b></p>
 
         <div>
           Search
@@ -34,25 +34,29 @@
             class: 'filterrific-periodically-observed'
           ) %>
         </div>
+        
+        <% if Rails.configuration.x.firestarter_settings["granting_active"] and @camp.minbudget %>
 
         <br>
 
-        <div class="form-inline">
-          <%= f.check_box(:not_fully_funded, class: 'filterrific-periodically-observed checkbox') %>
-          Hide fully funded
-        </div>
-
-        <div class="form-inline">
-          <%= f.check_box(:not_min_funded, class: 'filterrific-periodically-observed checkbox') %>
-          Hide minimum funded
-        </div>
-
-        <div class="form-inline">
-          <%= f.check_box(:not_seeking_funding, class: 'filterrific-periodically-observed checkbox') %>
-          Hide not open for granting
-        </div>
-
-        <%= render_filterrific_spinner %>
+          <div class="form-inline">
+            <%= f.check_box(:not_fully_funded, class: 'filterrific-periodically-observed checkbox') %>
+            Hide fully funded
+          </div>
+  
+          <div class="form-inline">
+            <%= f.check_box(:not_min_funded, class: 'filterrific-periodically-observed checkbox') %>
+            Hide minimum funded
+          </div>
+  
+          <div class="form-inline">
+            <%= f.check_box(:not_seeking_funding, class: 'filterrific-periodically-observed checkbox') %>
+            Hide not open for granting
+          </div>
+  
+          <%= render_filterrific_spinner %>
+        
+        <% end %>
 
         <% end %>
       </div>
