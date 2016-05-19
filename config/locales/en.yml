@@ -21,22 +21,22 @@
 
 en:
   # Front page
-  browser_title_tag: "Borderland Dreams"
-  top_headline_html: "Borderland<br>Dreams"
-  creations_menu: "Dreams"
-  register_creation_menu: "Create Dream"
-  login_menu: "Log in"
-  register_menu: "Register"
-  logout_menu: "Log out"
-  welcome_guest_title: "Welcome to your Dreams"
-  welcome_guest_text_html: "Congratulations! You've stumbled upon something special! <b><a href='http://www.theborderland.se'>THE BORDERLAND</a></b> is some awesome fucking shit. I mean, you can't even begin to understand the total exuberance of outlandish hijinks that people come up with for this thing. Dang!</b>"
-  welcome_user_title: "Welcome to your Dreams"
-  welcome_user_text_html: "Borderland Dreams is a directory of our collective imagination. We dream together and breathe life into our mad and wonderous creations. Dreams need matter to come to life, and this is where we share resources to make that happen. All borderlings get 8 grants to give out as they see fit. Think of these as superpowers, with which you can make dreams into matter! To activate granting for your dream, talk to you friendly local Dream Guide. Pretty neat, huh? Have a look around or create a dream of your own!"
+  browser_title_tag: "100 på Kungsholmstorg"
+  top_headline_html: "100 på <br>Kungsholmstorg"
+  creations_menu: "Aktiviteter"
+  register_creation_menu: "Skapa aktivitet"
+  login_menu: "Logga in"
+  register_menu: "Registrera"
+  logout_menu: "Logga ut"
+  welcome_guest_title: "Placeholder text: Textbox if not logged in"
+  welcome_guest_text_html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida ornare ipsum. Proin nunc nisi, faucibus eu risus sit amet, ultricies dapibus neque. Maecenas imperdiet odio in ex hendrerit luctus.</b>"
+  welcome_user_title: "Placeholder text: Texbox if logged in"
+  welcome_user_text_html: "Aliquam in elementum purus, sit amet tempus dui. Aliquam scelerisque laoreet molestie. Sed in vestibulum urna. Mauris mi purus, laoreet non nisi a, tincidunt dapibus sapien. Maecenas sollicitudin iaculis neque, ac porttitor metus dapibus vel. Ut sed luctus turpis. Vestibulum et rutrum odio. Sed libero urna, rhoncus ac diam vel, vulputate venenatis magna."
   footer_left_html: "The Borderland is a participatory community where we co-create events and gatherings as prototypes for our dreams. It is an empty container, open to your initiative. It is an invitation to play, to reflect, and to engage. If you have any question please ask in our <a href='facebook.com/groups/theborderland/'>Facebook Group</a>."
   footer_right_html: "In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators."
 
   # Creation registration form
-  form_basics_headline: "Dream registration"
+  form_basics_headline: "Registrera aktivitet"
 
   form_dream_name_label: "Dream name (required) "
   form_dream_name_guidetext_html: "What's your dream prototype called?"
@@ -84,8 +84,8 @@ en:
   form_budgetplan_guidetext_html: "How will you use your budget? Describe your costs, not too specific, not too vague, perfectly balanced."
 
   # Creation view
-  what_is_this_title: "What is this?"
-  what_is_this_text_html: "Congratulations! You've stumbled upon something special. The Borderland is a participatory festival that takes place in Boesdal quarry in Denmark on July 18-24. It's a fully participatory event where everything is created by the participants themselves, with out any spectators. Read more at <a href='http://www.theborderland.se'><b>theborderland.se</b></a> and as questions in our <a href='https://www.facebook.com/groups/theborderland/'>group</a>"
+  what_is_this_title: "Vad är 100 på Kungsholmstorg?"
+  what_is_this_text_html: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam eu pellentesque dolor, in pulvinar augue. Curabitur tempus, nisl eu auctor dignissim, massa lorem fringilla massa, ut fermentum orci diam non nulla."
 
   creation_info_headline: "Details"
 
