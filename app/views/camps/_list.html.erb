@@ -9,17 +9,11 @@
         <% @camps.each do |camp| %>
             <a href="<%= url_for(camp) %>">
                 <div class="camp_card">
-                  <% if camp.images.any? %>
-                    <% camp.images.each_with_index do |image, index| %>
-                      <% if index == 0 %>
-                        <% image_path = camp_image_path(camp_id: camp.id, id: image.id) %>
-                        <div class="camp_card-img" style="background-image:url('<%= image_path %>')"></div>
-                      <% end %>
+                    <% if camp.images.any? %>
+                        <%= image_tag(camp.images.first.attachment.url(:square)) %>
+                    <% else %>
+                        <%= image_tag('bsb_placeholder_square.jpg') %>
                     <% end %>
-                  <% else %>
-                    <div class="camp_card-img" style="background-image:url('http://placehold.it/750x400')"></div>
-                  <% end %>
-            
                   <% id = camp.id %>
                   <h1><%= truncate(camp.name, length: 50) %></h1>
                   <span class="camp_card-desc"><%= truncate(camp.description, length: 130) %></span>
