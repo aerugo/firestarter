@@ -22,10 +22,10 @@
         <% end %>
       </div>
       <div class="col-md-4">
+        <p><bSök efter aktiviteter</b></p>
         <%= form_for_filterrific @filterrific do |f| %>
         
         <div>
-          <p><bSök efter aktiviteter</b></p>
           <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
           <%= f.text_field(
             :search_query,
