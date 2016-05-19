@@ -10,7 +10,7 @@
             <a href="<%= url_for(camp) %>">
                 <div class="camp_card">
                     <% if camp.images.any? %>
-                        <%= image_tag(camp.images.first.attachment.url(:square)) %>
+                        <%= image_tag(camp.images.first.attachment.url(:large)) %>
                     <% else %>
                         <%= image_tag('bsb_placeholder_square.jpg') %>
                     <% end %>
