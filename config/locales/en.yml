@@ -36,7 +36,7 @@ en:
   footer_right_html: "In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators."
 
   # Creation registration form
-  form_basics_headline: "Registrera aktivitet"
+  form_basics_headline: "Skapa aktivitet"
 
   form_dream_name_label: "Dream name (required) "
   form_dream_name_guidetext_html: "What's your dream prototype called?"

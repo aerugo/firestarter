@@ -30,9 +30,13 @@
     = form.text_field :contact_phone, :maxlength => 64
     = t("form_contact_phone_guidetext_html")
 
-  .header-heading
+  - 2.times do
+    %br
+
   - if Rails.configuration.x.firestarter_settings["additional_info"]
-    = t("form_additional_headline")
+    .header-heading
+      = t("form_additional_headline")
+
   .combo#additonal
   - if Rails.configuration.x.firestarter_settings["additional_info"]
     = t("form_additional_info_text_html")
