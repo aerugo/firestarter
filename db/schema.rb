@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502195942) do
+ActiveRecord::Schema.define(version: 20160506203204) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 20160502195942) do
   add_index "camps", ["user_id"], name: "index_camps_on_user_id"
 
   create_table "images", force: :cascade do |t|
-    t.binary   "image"
     t.integer  "user_id"
     t.integer  "camp_id"
     t.datetime "created_at"

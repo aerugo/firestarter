@@ -75,6 +75,8 @@ group :development, :test do
   gem 'sqlite3'
   # For environment vars
   gem 'dotenv-rails'
+  # Livereload
+  gem 'guard-livereload'
 end
 
 group :development do

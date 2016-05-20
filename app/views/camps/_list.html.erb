@@ -9,14 +9,16 @@
         <% @camps.each do |camp| %>
             <a href="<%= url_for(camp) %>">
                 <div class="camp_card">
-                    <% if camp.images.any? %>
-                        <%= image_tag(camp.images.first.attachment.url(:large)) %>
-                    <% else %>
-                        <%= image_tag('bsb_placeholder_square.jpg') %>
-                    <% end %>
+                    <div class="img-box">
+                        <% if camp.images.any? %>
+                            <%= image_tag(camp.images.first.attachment.url(:large)) %>
+                        <% else %>
+                            <%= image_tag('bsb_placeholder_square.jpg') %>
+                        <% end %>
+                    </div>
                   <% id = camp.id %>
-                  <h1><%= truncate(camp.name, length: 50) %></h1>
-                  <span class="camp_card-desc"><%= truncate(camp.description, length: 130) %></span>
+                  <b><%= truncate(camp.name, length: 50) %></b>
+                  <span class="camp_card-desc"><%= truncate(camp.subtitle, length: 130) %></span>
                 </div>
             </a>
         <% end %>

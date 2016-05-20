@@ -1,15 +1,23 @@
 .camp_card {
   display: inline-block;
+  height: 330px;
   float: left;
   width: 50%;
   padding: 10px;
   margin-bottom: 20px;
+  overflow: hidden;
 
   &:hover {
     background: #d7e6f4;
   }
 
-  @media (max-width: 600px) {
+  .img-box {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  img {
     width: 100%;
   }
 
