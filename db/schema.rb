@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506203204) do
+ActiveRecord::Schema.define(version: 20160524132928) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20160506203204) do
     t.datetime "updated_at"
     t.boolean  "minfunded",                    default: false
     t.boolean  "fullyfunded",                  default: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "camps", ["user_id"], name: "index_camps_on_user_id"

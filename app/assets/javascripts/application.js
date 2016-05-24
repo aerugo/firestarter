@@ -15,3 +15,5 @@
 //= require_tree .
 //= require blueimp-gallery-all
 //= require filterrific/filterrific-jquery
+//= require lodash
+//= require gmaps/google

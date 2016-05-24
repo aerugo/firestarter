@@ -4,7 +4,9 @@
 <% end %>
 
 <% if current_user && @camp.creator == current_user %>
-	<%= render 'form' %>
+  <%= render(
+    partial: 'camps/form',
+  ) %>
 <% else %>
     <p class="alert">Only the original creator can edit this page.</p>
 <% end %>
