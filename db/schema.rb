@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20160524132928) do
     t.text     "cocreation",      limit: 1024
     t.text     "neighbors",       limit: 512
     t.text     "budgetplan",      limit: 1024
-    t.integer  "minbudget",                    default: 0
-    t.integer  "maxbudget",                    default: 0
+    t.integer  "minbudget"
+    t.integer  "maxbudget"
     t.boolean  "seeking_members"
     t.integer  "user_id"
     t.integer  "grants_received",              default: 0

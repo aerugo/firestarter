@@ -1,4 +1,21 @@
 window.onload = function(){ 
+
+  all_camps = JSON.parse(localStorage.getItem('all_camps'));
+  all_markers = [];
+  for (var i = 0; i < all_camps.length; i++) {
+    marker = {
+          "lat": all_camps[i].latitude,
+          "lng": all_camps[i].longitude,
+          "picture": {
+            "url": "http://icons.iconarchive.com/icons/flaticonmaker/flat-style/32/flag-icon.png",
+            "width":  32,
+            "height": 32
+          },
+          "infowindow": all_camps[i].name,
+        };
+    all_markers.push(marker);
+  }
+
   handler = Gmaps.build('Google');
   handler.buildMap({
       provider: {
@@ -14,35 +31,10 @@ window.onload = function(){
       }
     },
     function(){
-      markers = handler.addMarkers([
-        {
-          "lat": 59.3336313,
-          "lng": 18.0328983,
-          "picture": {
-            "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-            "width":  32,
-            "height": 32
-          },
-          "infowindow": "one marker!"
-        },
-        {
-          "lat": 59.3311,
-          "lng": 18.039049,
-          "picture": {
-            "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-            "width":  32,
-            "height": 32
-          },
-          "infowindow": "another marker!"
-        },
-      ]);
-
-
+      markers = handler.addMarkers(all_markers);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
 
     }
   );
-
-  console.log(handler)
 };

@@ -2,8 +2,17 @@
   <% browser_title = t(:browser_title_tag) %>
   <title><%= browser_title %></title>
   <%= javascript_include_tag 'all_camps_map' %> 
-
 <% end %>
+
+<%= javascript_tag do %>
+    window.localstorage = localStorage;
+    all_camps = <%= @camps.to_json.html_safe %> ;
+    localStorage.setItem('all_camps', JSON.stringify(all_camps));
+<% end %>
+
+<div>
+  <div id="map"></div>
+</div>
 
 <div class="row top_message">
   <div class="panel panel-default">
@@ -61,10 +70,6 @@
       </div>
     </div>
   </div>
-</div>
-
-<div>
-  <div id="map"></div>
 </div>
 
 <%= render(
