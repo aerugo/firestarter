@@ -2,24 +2,25 @@ defaults: &defaults
   additional_info: true
   contact_phone: true
   description: true
-  electricity: true
-  light: true
-  fire: true
-  noise: true
-  nature: true
-  moop: true
+  placement: true
+  electricity: false
+  light: false
+  fire: false
+  noise: false
+  nature: false
+  moop: false
   plan: true
   cocreation: false
   neighbors: true
-  budgetplan: true
-  seeking_members: true
+  budgetplan: false
+  seeking_members: false
   granting: false
   user_authentication_codes: false
   add_to_list: false
   granting_active: false
   footer_text: false
   footer_logo: false
-  creation_sidebar_welcome: true
+  creation_sidebar_welcome: false
 
 development:
   <<: *defaults

@@ -46,9 +46,9 @@ function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
         }
         if(!!document.getElementById("longitude").value){
           draggableMarker.lng = document.getElementById("longitude").value
+          var oldMarker = Gmaps.markers.filter(function(m) { return m.serviceObject.position.lat() == draggableMarker.lat; })[0];
+          oldMarker.serviceObject.setVisible(false);
         }
-        var oldMarker = Gmaps.markers.filter(function(m) { return m.serviceObject.position.lat() == draggableMarker.lat; })[0];
-        oldMarker.serviceObject.setVisible(false);
         Gmaps.marker = handler.addMarker(draggableMarker, {draggable: true});
         google.maps.event.addListener(Gmaps.marker.serviceObject, 'dragend', getLatLong);
       }

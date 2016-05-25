@@ -17,13 +17,13 @@ class CampsController < ApplicationController
   def new
     @camp = Camp.new
     @camps = Camp.all
-    @submit_text = 'Create'
+    @submit_text = 'Skapa'
   end
 
   def edit
     @camp = Camp.find params[:id]
     @camps = Camp.all
-    @submit_text = 'Update'
+    @submit_text = 'Uppdatera'
   end
 
   def create
@@ -131,7 +131,7 @@ class CampsController < ApplicationController
     #
 
     if !@user
-      flash[:notice] = "You need to be logged in to add your email to the list."
+      flash[:notice] = "Du måste vara inloggad."
     elsif @camp.users.include?(@user)
       flash[:notice] = "Nice! You've already sent your email to the creator."
     else

@@ -45,7 +45,7 @@
 
         <!-- Creation text content -->
         <div class="camp-description">
-            <b>Summary</b>
+            <b>Sammanfattning</b>
             <p><%= simple_format(@camp.subtitle) %></p>
         </div>
 
@@ -99,7 +99,7 @@
 
         <% random = Camp.order("RANDOM()").first %>
         <a href="<%= url_for(random) %>" class="btn btn-primary camp-button" role="button">
-            Next random dream <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
+            Fler aktiviteter <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
         </a>
 
         <div class="creation-info">
@@ -109,20 +109,20 @@
 
                 <% if current_user && @camp.creator == current_user %>
                     <li><span>
-                        <a href="<%= edit_camp_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Edit creation</a>
+                        <a href="<%= edit_camp_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Updatera aktivitet</a>
                     </li></span>
                     <li><span>
-                        <a href="<%= camp_images_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Manage images</a>
+                        <a href="<%= camp_images_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Ladda upp bilder</a>
                     </li></span>
                 <% end %>
 
                 <br>
 
-                <li><span><b>Contact Name:</b> <%= @camp.contact_name %></span></li>
+                <li><span><b>Kontaktperson:</b> <%= @camp.contact_name %></span></li>
                 <br>
 
                 <% if current_user && current_user.guide %>
-                    <li><span><b>Contact Email:</b> <%= @camp.contact_email %></span></li>
+                    <li><span><b>Mail:</b> <%= @camp.contact_email %></span></li>
 
                     <br>
                 <% end %>
@@ -295,7 +295,7 @@
 
                 <% if current_user && (@camp.creator == current_user || current_user.admin) %>
                     <%= form_for @camp, method: :delete do |f| %>
-                        <%= f.submit 'Delete this creation', class: "btn btn-danger" , data: { confirm: 'Are you sure?' } %>
+                        <%= f.submit 'Ta bort aktiviteten', class: "btn btn-danger" , data: { confirm: 'Är du säker på att du vill ta bort aktiviteten?' } %>
                     <% end %>
                 <% end %>
 

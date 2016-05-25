@@ -10,9 +10,11 @@
     localStorage.setItem('all_camps', JSON.stringify(all_camps));
 <% end %>
 
-<div>
-  <div id="map"></div>
-</div>
+<% if Rails.configuration.x.firestarter_settings["placement"] %>
+  <div>
+    <div id="map"></div>
+  </div>
+<% end %>
 
 <div class="row top_message">
   <div class="panel panel-default">

@@ -1,10 +1,14 @@
-<div class="header-heading">
-  Välj en plats för din aktivitet
-</div>
+<% if Rails.configuration.x.firestarter_settings["placement"] %>
 
-<div>
-  <div id="map"></div>
-</div>
+  <div class="header-heading">
+    <%= t("form_location_headline") %>
+  </div>
+
+  <div>
+    <div id="map"></div>
+  </div>
+
+<% end %>
 
 <%= form_for @camp do |form| %>
 
@@ -175,9 +179,9 @@
 
   <div class="submit">
     <% if @camp.name %>
-      <%= form.submit "Update dream!", class: 'btn btn-success' %>
+      <%= form.submit "Updatera aktivitet", class: 'btn btn-success' %>
     <% else %>
-      <%= form.submit "Create dream!", class: 'btn btn-success' %>
+      <%= form.submit "Skapa aktivitet", class: 'btn btn-success' %>
     <% end %>
   </div>
 
