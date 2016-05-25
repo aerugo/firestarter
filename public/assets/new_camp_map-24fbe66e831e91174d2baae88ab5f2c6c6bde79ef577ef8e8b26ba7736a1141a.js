@@ -5,7 +5,6 @@ var lng = defaultLon;
 
 window.onload = function(){ 
 
-  document.getElementById("map").addEventListener("click", getLatLong);
   var currentLat = document.getElementById("latitude").value;
   var currentLon = document.getElementById("longitude").value;
 
@@ -24,11 +23,9 @@ window.onload = function(){
   handler = Gmaps.build('Google');
   handler.buildMap({
       provider: {
-        disableDefaultUI: true,
         center: {lat: lat, lng: lng},
         maxZoom: 18,
         minZoom: 10,
-        oom: 14,
 
         // pass in other Google Maps API options here
       },
@@ -45,6 +42,7 @@ window.onload = function(){
         }];
 
       Gmaps.markers = handler.addMarkers(myMarker, {draggable: true});
+      google.maps.event.addListener(Gmaps.markers[0].serviceObject, 'dragend', getLatLong);
       handler.bounds.extendWith(Gmaps.markers);
       handler.fitMapToBounds();
       handler.getMap().setZoom(15);

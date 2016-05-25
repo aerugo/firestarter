@@ -13,7 +13,7 @@ window.onload = function(){
             "lat": all_camps[i].latitude,
             "lng": all_camps[i].longitude,
             "picture": {
-              "url": "http://icons.iconarchive.com/icons/flaticonmaker/flat-style/32/flag-icon.png",
+              "url": "<%= image_tag "icon.png" %>",
               "width":  32,
               "height": 32
             },
@@ -26,7 +26,6 @@ window.onload = function(){
   handler = Gmaps.build('Google');
   handler.buildMap({
       provider: {
-        disableDefaultUI: true,
         center: {lat: lat, lng: lng},
         maxZoom: 18,
         minZoom: 10

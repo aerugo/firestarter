@@ -1,0 +1,62 @@
+'use strict';
+
+var icon = "<%= asset_path('icon.png') %>"
+
+function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
+  var all_markers = [];
+  var marker = {};
+  for (var i = 0; i < staticMarkers.length; i++) {
+    if(!!staticMarkers[i].latitude && !!staticMarkers[i].longitude) {
+      marker = {
+            "lat": staticMarkers[i].latitude,
+            "lng": staticMarkers[i].longitude,
+            "picture": {
+              "url": icon,
+              "width":  32,
+              "height": 32
+            },
+            "infowindow": staticMarkers[i].name,
+          };
+      all_markers.push(marker);
+    }
+  }
+
+  var handler = Gmaps.build('Google');
+  handler.buildMap({
+      provider: {
+        center: {lat: lat, lng: lng},
+        maxZoom: 18,
+        minZoom: 10
+
+        // pass in other Google Maps API options here
+      },
+      internal: {
+        id: 'map'
+      }
+    },
+    function(){
+      Gmaps.markers = handler.addMarkers(all_markers);
+      handler.bounds.extendWith(Gmaps.markers);
+      handler.getMap().setCenter(new google.maps.LatLng(initialCenter.lat, initialCenter.lng));
+      handler.getMap().setZoom(initialZoom);
+
+      if(!!draggableMarker) {
+        if(!!document.getElementById("latitude").value){
+          draggableMarker.lat = document.getElementById("latitude").value
+        }
+        if(!!document.getElementById("longitude").value){
+          draggableMarker.lng = document.getElementById("longitude").value
+        }
+        var oldMarker = Gmaps.markers.filter(function(m) { return m.serviceObject.position.lat() == draggableMarker.lat; })[0];
+        oldMarker.serviceObject.setVisible(false);
+        Gmaps.marker = handler.addMarker(draggableMarker, {draggable: true});
+        google.maps.event.addListener(Gmaps.marker.serviceObject, 'dragend', getLatLong);
+      }
+    }
+  );
+};
+
+function getLatLong(){
+  document.getElementById("latitude").value = Gmaps.marker.serviceObject.position.lat();
+  document.getElementById("longitude").value = Gmaps.marker.serviceObject.position.lng();
+};
