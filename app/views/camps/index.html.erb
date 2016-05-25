@@ -5,7 +5,6 @@
 <% end %>
 
 <%= javascript_tag do %>
-    window.localstorage = localStorage;
     all_camps = <%= @camps.to_json.html_safe %> ;
     localStorage.setItem('all_camps', JSON.stringify(all_camps));
 <% end %>
@@ -39,7 +38,6 @@
           <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
           <%= f.text_field(
             :search_query,
-            class: 'filterrific-periodically-observed'
           ) %>
         </div>
         

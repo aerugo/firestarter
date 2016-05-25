@@ -1,6 +1,7 @@
 <% content_for(:head) do %>
   <% browser_title = "Editing " + @camp.name + " - " + t(:browser_title_tag) %>
   <title><%= browser_title %></title>
+  <%= javascript_include_tag 'new_camp_map' %> 
 <% end %>
 
 <% if current_user && @camp.creator == current_user %>
@@ -10,3 +11,4 @@
 <% else %>
     <p class="alert">Only the original creator can edit this page.</p>
 <% end %>
+

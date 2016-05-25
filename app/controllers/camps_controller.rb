@@ -16,11 +16,13 @@ class CampsController < ApplicationController
 
   def new
     @camp = Camp.new
+    @camps = Camp.all
     @submit_text = 'Create'
   end
 
   def edit
     @camp = Camp.find params[:id]
+    @camps = Camp.all
     @submit_text = 'Update'
   end
 
