@@ -105,3 +105,14 @@ input[type=checkbox] {
   margin-top: 15px;
   cursor: pointer;
 }
+
+.checkbox_container {
+  display: inline-block;}
+
+.form_checkbox input {
+  display: inline;
+}
+
+.form_checkbox label {
+  display: inline;
+}

@@ -12,6 +12,8 @@ defaults: &defaults
   plan: true
   cocreation: false
   neighbors: true
+  marketing: true
+  responsibility_check: true
   budgetplan: false
   seeking_members: false
   granting: false

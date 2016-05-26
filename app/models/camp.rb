@@ -10,6 +10,7 @@ class Camp < ActiveRecord::Base
 	validates :subtitle, presence: true
 	validates :contact_email, presence: true
 	validates :contact_name, presence: true
+	validates :accept_terms, acceptance: { accept: true }
 
 	filterrific(
 	default_filter_params: { sorted_by: 'updated_at_desc' },

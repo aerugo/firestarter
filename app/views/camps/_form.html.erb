@@ -140,6 +140,27 @@
     <%= t("form_neighbors_guidetext_html") %>
   <% end %>
 
+  <% if Rails.configuration.x.firestarter_settings["marketing"] %>
+    <br/>
+    <br/>
+    <div class="header-heading">
+      <%= t("form_marketing_headline") %>
+    </div>
+    <br>
+    <%= form.label t("form_facebook_label") %>
+    <%= form.text_field :facebook_link, :maxlength => 256 %>
+    <br>
+    <%= form.label t("form_twitter_label") %>
+    <%= form.text_field :twitter_link, :maxlength => 256 %>
+    <br>
+    <%= form.label t("form_instagram_label") %>
+    <%= form.text_field :instagram_link, :maxlength => 256 %>
+    <br>
+    <%= form.label t("form_video_label") %>
+    <%= form.text_field :video_link, :maxlength => 256 %>
+
+  <% end %>
+
   <% if Rails.configuration.x.firestarter_settings["granting"] %>
     <br/>
     <br/>
@@ -175,6 +196,17 @@
     <%= form.label t("form_budgetplan_label") %>
     <%= form.text_area :budgetplan, :maxlength => 4096 %>
     <%= t("form_budgetplan_guidetext_html") %>
+  <% end %>
+
+
+  <% if Rails.configuration.x.firestarter_settings["responsibility_check"] %>
+    <br/>
+    <br/>
+    <%= t("form_responsibility_guidetext_html") %>
+    <div class="checkbox_container">
+      <%= form.check_box :accept_terms, class: 'form_checkbox' %>
+      <%= form.label t("form_responsibility_label"), class: 'form_checkbox' %>
+    </div>
   <% end %>
 
   <div class="submit">

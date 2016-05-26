@@ -21,17 +21,17 @@
 
 en:
   # Front page
-  browser_title_tag: "Kungsholmens Dag"
-  top_headline_html: "Kungsholmens Dag"
+  browser_title_tag: "Kungsholmstorgs Dag"
+  top_headline_html: "Kungsholmstorgs Dag"
   creations_menu: "Aktiviteter"
   register_creation_menu: "Skapa aktivitet"
   login_menu: "Logga in"
   register_menu: "Registrera"
   logout_menu: "Logga ut"
-  welcome_guest_title: "Välkommen till Kungsholmens Dag"
-  welcome_guest_text_html: "Kungsholmens Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'>klicka här!</a></b>"
-  welcome_user_title: "Välkommen till Kungsholmens Dag"
-  welcome_user_text_html: "Kungsholmens Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'><b>klicka här!</b></a></b>"
+  welcome_guest_title: "Välkommen till Kungsholmstorgs Dag"
+  welcome_guest_text_html: "Kungsholmstorgs Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'>klicka här!</a></b>"
+  welcome_user_title: "Välkommen till Kungsholmstorgs Dag"
+  welcome_user_text_html: "Kungsholmstorgs Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'><b>klicka här!</b></a></b>"
   footer_left_html: "The Borderland is a participatory community where we co-create events and gatherings as prototypes for our dreams. It is an empty container, open to your initiative. It is an invitation to play, to reflect, and to engage. If you have any question please ask in our <a href='facebook.com/groups/theborderland/'>Facebook Group</a>."
   footer_right_html: "In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators."
 
@@ -55,46 +55,83 @@ en:
   form_additional_info_text_html: "Kan fyllas i senare."
 
   form_description_label: "Fullständig beskrivning av aktivitet"
-  form_description_guidetext_html: "På vilket sätt bidrar aktiviteten till mer glädje, generositet och nya möten på Kungsholmen?"
-  form_electricity_label: "Do you need electricity from the grid?"
-  form_electricity_guidetext_html: "If yes, how much approximately are we talking?"
-  form_light_label: "Will there be light?"
-  form_light_guidetext_html: "Will The Thing be illuminated during the night (yes please!)? How?"
-  form_fire_label: "Will anything burn?"
-  form_fire_guidetext_html: "Tell us about your plans for dealing with big fire, if you have such."
-  form_noise_label: "What is your audio footprint?"
-  form_noise_guidetext_html: "Are you making any noise?"
-  form_nature_label: "Forces of nature"
-  form_nature_guidetext_html: "Boesdal is a windy place, right next to the ocean, light structures have been known to go hilariously airborn, rain has been known to soak things, how are you ready for it?"
-  form_moop_label: "Moop plan (matter out of place)"
-  form_moop_guidetext_html: "All the little things that should not end up just lying around. What kind of moop (Trash et.c) will you and the participants in your creation create, and how will you deal with that?"
+  form_description_guidetext_html: "På vilket sätt bidrar aktiviteten till mer glädje, generositet och nya möten på Kungsholmstorg?"
+  form_electricity_label: ""
+  form_electricity_guidetext_html: ""
+  form_light_label: ""
+  form_light_guidetext_html: ""
+  form_fire_label: ""
+  form_fire_guidetext_html: ""
+  form_noise_label: ""
+  form_noise_guidetext_html: ""
+  form_nature_label: ""
+  form_nature_guidetext_html: ""
+  form_moop_label: ""
+  form_moop_guidetext_html: ""
   form_plan_label: "Vilka hoppas du/ni deltar?"
   form_plan_guidetext_html: ""
-  form_cocreation_label: "How can other borderlings cocreate with you?"
-  form_cocreation_guidetext_html: "How can someone be a part of this project?"
+  form_cocreation_label: ""
+  form_cocreation_guidetext_html: ""
   form_neighbors_label: "Behöver du/ni hjälp med något?"
   form_neighbors_guidetext_html: "Vilka skulle du/ni vilja samarbeta med? "
 
-  form_artgrants_headline: "Art grant information"
-  form_artgrants_text_html: "<p>If you're not looking for an art grant, leave these fields blank.</p><p>Art grants are given by the Borderland comminity. Each Borderling has 8 art-grants to hand out. You can give all your grants to one project or spread them around. Once a grant has been gifted to a dream, it can't be taken back. Each grant is worth 50 DKK. You should approximate your budget in number of grants needed. For example, if you need 5000 DKK this translates into 100 grants.</p>"
+  form_marketing_headline: "Marknadsföring"
+  form_marketing_guidetext_html: "Hur kommer du/ni marknadsföra eventet?"
+  form_facebook_label: "Facebook"
+  form_twitter_label: "Twitter"
+  form_instagram_label: "Instagram"
+  form_video_label: "Videolänk"
 
-  form_minigrants_label: "Minumum number of grants needed:"
-  form_minigrants_guidetext_html: "Necessary minimum budget level, below which you won't get funded."
-  form_maxigrants_label: "Grants needed to fully fund dream:"
-  form_maxigrants_guidetext_html: "How many grants you need to fully fund your project."
-  form_budgetplan_label: "Budget overview"
-  form_budgetplan_guidetext_html: "How will you use your budget? Describe your costs, not too specific, not too vague, perfectly balanced."
+  form_artgrants_headline: ""
+  form_artgrants_text_html: ""
+
+  form_minigrants_label: ""
+  form_minigrants_guidetext_html: ""
+
+  form_maxigrants_label: ""
+  form_maxigrants_guidetext_html: ""
+  form_budgetplan_label: ""
+  form_budgetplan_guidetext_html: ""
+
+  form_responsibility_label: "Jag förstår!"
+  form_responsibility_guidetext_html: "Jag förstår att jag är fullt ansvarig för planera, utföra och städa upp efter min aktivitet. <br>"
 
   # Creation view
   what_is_this_title: "Vad är 100 på Kungsholmstorg?"
-  what_is_this_text_html: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam eu pellentesque dolor, in pulvinar augue. Curabitur tempus, nisl eu auctor dignissim, massa lorem fringilla massa, ut fermentum orci diam non nulla."
+  what_is_this_text_html: ""
 
   creation_info_headline: "Detaljer"
 
-  cocreator_application_guidetext: "If you're interested in helping out with this dream, you can add your email to a list which only the dream creator can see."
-  cocreators_list_guidetext: "These people want to co-create with you:"
+  marketing_info_headline: "Marknadsföring"
+
+  cocreator_application_guidetext: ""
+  cocreators_list_guidetext: ""
 
   # Manage images view
-  images_headline: "Lorem ipsum"
-  upload_headline: "Lorem ipsum"
-  upload_guidetext_html: "Lorem ipsum"
+  images_headline: "Bilder"
+  upload_headline: "Ladda upp bilder"
+  upload_guidetext_html: ""
+
+  # Active records errors
+  activerecord:
+    attributes:
+      camp:
+        name: "Namn"
+        subtitle: "Kort beskrivning"
+        contact_email: "Mail"
+        contact_name: "Kontaktperson"
+        accept_terms: "Ansvarsboxen"
+    errors:
+      models:
+        camp:
+          attributes:
+            name:
+              blank: "måste fyllas i"
+            subtitle:
+              blank: "måste fyllas i"
+            contact_email:
+              blank: "måste fyllas i"
+            contact_name:
+              blank: "måste fyllas i"
+            accept_terms:
+              accepted: "måste kryssas i"
