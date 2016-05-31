@@ -31,7 +31,7 @@ class CampsController < ApplicationController
     @camp.creator = current_user
 
     if @camp.save
-      redirect_to camps_path
+      redirect_to camp_path(@camp)
     else
       flash.now[:notice] = "Errors: #{@camp.errors.full_messages.join(', ')}"
       render :new

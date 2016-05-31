@@ -10,12 +10,6 @@
     localStorage.setItem('all_camps', JSON.stringify(all_camps));
 <% end %>
 
-<% if Rails.configuration.x.firestarter_settings["placement"] %>
-  <div>
-    <div id="map"></div>
-  </div>
-<% end %>
-
 <div class="row top_message">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -72,6 +66,13 @@
     </div>
   </div>
 </div>
+
+<% if Rails.configuration.x.firestarter_settings["placement"] %>
+  <div>
+    <div class="overlay" onClick="style.pointerEvents='none'"></div>
+    <div id="map"></div>
+  </div>
+<% end %>
 
 <%= render(
   partial: 'camps/list',
