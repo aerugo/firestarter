@@ -1,8 +1,12 @@
 defaults: &defaults
   additional_info: true
   contact_phone: true
+  organizer: true
   description: true
+  benefit: true
   placement: true
+  address: true
+  time: true
   electricity: false
   light: false
   fire: false
@@ -10,7 +14,7 @@ defaults: &defaults
   nature: false
   moop: false
   plan: true
-  cocreation: false
+  cocreation: true
   neighbors: true
   marketing: true
   responsibility_check: true

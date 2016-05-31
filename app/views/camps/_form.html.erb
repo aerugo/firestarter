@@ -1,3 +1,11 @@
+<%= form_for @camp do |form| %>
+
+<div class="header-heading">
+  <%= t("form_basics_headline") %>
+</div>
+
+<p>En aktivitet ska sprida glädje, vara generös och leda till nya möten. Placera din aktivitet på kartan och fyll i formuläret nedan. När du fyllt i formuläret kan du ladda upp bilder på din aktivitet och på dig/er som arrangerar. </p>
+
 <% if Rails.configuration.x.firestarter_settings["placement"] %>
 
   <div class="header-heading">
@@ -8,13 +16,12 @@
     <div id="map"></div>
   </div>
 
-<% end %>
-
-<%= form_for @camp do |form| %>
-
-  <div class="header-heading">
-    <%= t("form_basics_headline") %>
+    <div class="combo" id="address">
+    <%= form.label t("form_address_label") %>
+    <%= form.text_field :address, :maxlength => 255 %>
   </div>
+
+<% end %>
 
   <div class="combo" id="name">
     <%= form.label t("form_dream_name_label") %>
@@ -26,6 +33,22 @@
     <%= form.label t("form_subtitle_label") %>
     <%= form.text_area :subtitle, :maxlength => 255 %>
     <%= t("form_subtitle_guidetext_html") %>
+  </div>
+
+  <div class="combo" id="start_time">
+    <%= form.label t("form_start_time_label") %>
+    <%= form.text_field :start_time, :maxlength => 64 %>
+  </div>
+
+  <div class="combo" id="end_time">
+    <%= form.label t("form_end_time_label") %>
+    <%= form.text_field :end_time, :maxlength => 64 %>
+  </div>
+
+  <div class="combo" id="organizer">
+    <%= form.label t("form_organizer_label") %>
+    <%= form.text_field :organizer, :maxlength => 64 %>
+    <%= t("form_organizer_guidetext_html") %>
   </div>
 
   <div class="combo" id="contact_name">
@@ -75,6 +98,13 @@
     <%= form.label t("form_description_label") %>
     <%= form.text_area :description, :maxlength => 4096 %>
     <%= t("form_description_guidetext_html") %>
+  <% end %>
+
+  <div class="combo" id="benefit"></div>
+  <% if Rails.configuration.x.firestarter_settings["benefit"] %>
+    <%= form.label t("form_benefit_label") %>
+    <%= form.text_area :benefit, :maxlength => 4096 %>
+    <%= t("form_benefit_guidetext_html") %>
   <% end %>
 
   <div class="combo" id="electricity"></div>
@@ -147,6 +177,10 @@
       <%= t("form_marketing_headline") %>
     </div>
     <br>
+    <br>
+    <%= t("form_marketing_guidetext_html") %>
+    <br>
+    <br>
     <%= form.label t("form_facebook_label") %>
     <%= form.text_field :facebook_link, :maxlength => 256 %>
     <br>
@@ -208,6 +242,10 @@
       <%= form.label t("form_responsibility_label"), class: 'form_checkbox' %>
     </div>
   <% end %>
+
+  <br/>
+  <br/>
+  <p><em>Behöver du eventuellt söka polistillstånd, maila max.lauritzen@thread.se för att få lite hjälp på traven.</em></p>
 
   <div class="submit">
     <% if @camp.name %>

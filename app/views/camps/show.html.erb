@@ -56,6 +56,13 @@
             </div>
         <% end %>
 
+        <% if Rails.configuration.x.firestarter_settings["benefit"] and @camp.benefit != "" %>
+            <div class="camp-description">
+                <b><%=t :form_benefit_label %></b>
+                <p><%= simple_format(@camp.benefit) %></p>
+            </div>
+        <% end %>
+
         <% if Rails.configuration.x.firestarter_settings["plan"] and @camp.plan != "" %>
             <div class="camp-description">
                 <b><%=t :form_plan_label %></b>
@@ -121,12 +128,42 @@
                 <li><span><b>Kontaktperson:</b> <%= @camp.contact_name %></span></li>
                 <br>
 
-                <% if current_user && current_user.guide %>
-                    <li><span><b>Mail:</b> <%= @camp.contact_email %></span></li>
+                <% if Rails.configuration.x.firestarter_settings["organizer"] and @camp.organizer != "" %>
+                    <li><span><b>Arrangeras av:</b> <%= @camp.organizer %></span></li>
+                    <br>
+                <% end %>
+
+
+                <li><span><b>Mail:</b> <%= @camp.contact_email %></span></li>
+                 <br>
+
+                <% if Rails.configuration.x.firestarter_settings["address"] and  @camp.address != "" %>
+                    <li><span>
+                        <b><%=t :form_address_label %></b> <%= @camp.address %>
+                    </span></li>
+
 
                     <br>
                 <% end %>
 
+
+                <% if Rails.configuration.x.firestarter_settings["time"] and  @camp.start_time != "" %>
+                    <li><span>
+                        <b><%=t :form_start_time_label %></b> <%= @camp.start_time %>
+                    </span></li>
+
+
+                    <br>
+                <% end %>
+
+                <% if Rails.configuration.x.firestarter_settings["time"] and  @camp.end_time != "" %>
+                    <li><span>
+                        <b><%=t :form_end_time_label %></b> <%= @camp.end_time %>
+                    </span></li>
+
+
+                    <br>
+                <% end %>
 
                 <% if Rails.configuration.x.firestarter_settings["marketing"] and @camp.facebook_link != "" %>
                     <div class="camp-description">
