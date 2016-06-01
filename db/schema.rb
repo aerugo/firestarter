@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531085926) do
+ActiveRecord::Schema.define(version: 20160601150347) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20160531085926) do
     t.string   "end_time"
     t.string   "organizer"
     t.string   "benefit"
+    t.string   "marketing",                    default: ""
   end
 
   add_index "camps", ["user_id"], name: "index_camps_on_user_id"

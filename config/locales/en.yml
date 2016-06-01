@@ -29,9 +29,9 @@ en:
   register_menu: "Registrera"
   logout_menu: "Logga ut"
   welcome_guest_title: "Välkommen till Kungsholmstorgs Dag"
-  welcome_guest_text_html: "Kungsholmstorgs Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'>klicka här!</a></b>"
+  welcome_user_text_html: "Kungsholmstorgs Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'><b>klicka här!</b></a></b> <br> <br> En aktivitet behöver inte vara färdig när den läggs upp, utan kan uppdateras och utvecklas allt eftersom. Berätta om din idé och bjud in in grannar och samarbetspartners att hjälpa till!"
   welcome_user_title: "Välkommen till Kungsholmstorgs Dag"
-  welcome_user_text_html: "Kungsholmstorgs Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'><b>klicka här!</b></a></b> En aktivitet behöver inte vara färdig när den läggs upp, utan kan uppdateras och utvecklas allt eftersom. Berätta om din idé och bjud in in grannar och samarbetspartners att hjälpa till!"
+  welcome_user_text_html: "Kungsholmstorgs Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'><b>klicka här!</b></a></b> <br> <br> En aktivitet behöver inte vara färdig när den läggs upp, utan kan uppdateras och utvecklas allt eftersom. Berätta om din idé och bjud in in grannar och samarbetspartners att hjälpa till!"
   footer_left_html: "The Borderland is a participatory community where we co-create events and gatherings as prototypes for our dreams. It is an empty container, open to your initiative. It is an invitation to play, to reflect, and to engage. If you have any question please ask in our <a href='facebook.com/groups/theborderland/'>Facebook Group</a>."
   footer_right_html: "In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators."
 
@@ -84,11 +84,12 @@ en:
   form_neighbors_guidetext_html: ""
 
   form_marketing_headline: "Marknadsföring"
+  form_marketing_label: "Marknadsföring"
   form_marketing_guidetext_html: "Vad är er strategi för att marknadsföra er aktivitet och se till att folk kommer?"
-  form_facebook_label: "Facebook"
-  form_twitter_label: "Twitter"
-  form_instagram_label: "Instagram"
-  form_video_label: "Videolänk"
+  form_facebook_label: "Länk till Facebook-event"
+  form_twitter_label: "Länk till Twitter"
+  form_instagram_label: "Länk till Instagram"
+  form_video_label: "Länk till video"
 
   form_artgrants_headline: ""
   form_artgrants_text_html: ""

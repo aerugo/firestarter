@@ -176,22 +176,32 @@
     <div class="header-heading">
       <%= t("form_marketing_headline") %>
     </div>
-    <br>
-    <br>
+
+    <div class="combo" id="marketing">
+    <%= form.label t("form_marketing_label") %>
+    <%= form.text_area :marketing, :maxlength => 1024 %>
     <%= t("form_marketing_guidetext_html") %>
-    <br>
-    <br>
+    </div>
+
+    <div class="combo" id="facebook">
     <%= form.label t("form_facebook_label") %>
     <%= form.text_field :facebook_link, :maxlength => 256 %>
-    <br>
+    </div>
+
+    <div class="combo" id="twitter">
     <%= form.label t("form_twitter_label") %>
     <%= form.text_field :twitter_link, :maxlength => 256 %>
-    <br>
+    </div>
+
+    <div class="combo" id="instagram">
     <%= form.label t("form_instagram_label") %>
     <%= form.text_field :instagram_link, :maxlength => 256 %>
-    <br>
+    </div>
+
+    <div class="combo" id="video">
     <%= form.label t("form_video_label") %>
     <%= form.text_field :video_link, :maxlength => 256 %>
+    </div>
 
   <% end %>
 
