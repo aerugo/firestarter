@@ -168,34 +168,34 @@
                 <% if Rails.configuration.x.firestarter_settings["marketing"] and @camp.facebook_link != "" %>
                     <div class="camp-description">
                         <% link = @camp.facebook_link %>
-                        <% if(link[0,1] != "http://") %>
+                        <% if(link[0,7] != "http://" && link[0,8] != "https://" ) %>
                             <% link = "http://" + link %>
                         <% end %>
-                        <p><b><a href="<%= link %>">Facebook</a></b></p>
+                        <p><b><%= link_to("Facebook", link) %></b></p>
                     </div>
                 <% end %>
 
                 <% if Rails.configuration.x.firestarter_settings["marketing"] and @camp.twitter_link != "" %>
                     <div class="camp-description">
                         <% link = "http://twitter.com/" + @camp.twitter_link %>
-                        <p><b><a href="<%= link %>">Twitter</a></b></p>
+                        <p><b><%= link_to("Twitter", link) %></b></p>
                     </div>
                 <% end %>
 
                 <% if Rails.configuration.x.firestarter_settings["marketing"] and @camp.instagram_link != "" %>
                     <div class="camp-description">
                         <% link = "http://www.instagram.com/" + @camp.instagram_link %>
-                        <p><b><a href="<%= link %>">Instagram</a></b></p>
+                        <p><b><%= link_to("Instagram", link) %></b></p>
                     </div>
                 <% end %>
 
                 <% if Rails.configuration.x.firestarter_settings["marketing"] and @camp.video_link != "" %>
                     <div class="camp-description">
                         <% link = @camp.video_link %>
-                        <% if(link[0,1] != "http://") %>
+                        <% if(link[0,7] != "http://" && link[0,8] != "https://" ) %>
                             <% link = "http://" + link %>
                         <% end %>
-                        <p><b><a href="<%= link %>">Videolänk</a></b></p>
+                        <p><b><%= link_to("Videolänk", link) %></b></p>
                     </div>
                 <% end %>
 
