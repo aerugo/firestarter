@@ -4,7 +4,7 @@
   margin: 0px;
   color: rgb(0, 213, 255);
   width: 100%;
-  height: 240px;
+  height: 90px;
   max-width: none;
 }
 
@@ -22,7 +22,7 @@
 .top_menu {
   padding-top: 0px;
   a {
-    color: rgb(255,255,255);
+    color: rgb(0,0,0);
     text-decoration: none;
     &:hover { 
         color: rgb(250, 176, 11);
@@ -33,6 +33,7 @@
 
 .header-nav {
   display: inline-block;
+  margin-top: 20px;
   margin-bottom: 10px;
   font-family: 'Dosis', sans-serif;
   display: -webkit-flex; /* Safari */
