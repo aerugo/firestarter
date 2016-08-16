@@ -1,5 +1,7 @@
 # Firestarter platform
 
+This readme is really, really outdated. Instructions to get started and to set up Active Admin are still valid though.
+
 ## To get started
 
 Install ruby 2.3.0 (or any ruby will probably work).
