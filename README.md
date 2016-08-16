@@ -1,4 +1,4 @@
-# campengine
+# Firestarter platform
 
 ## To get started
 
