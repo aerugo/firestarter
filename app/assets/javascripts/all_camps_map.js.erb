@@ -1,6 +1,6 @@
 
-var defaultLat = 59.3273924381445;
-var defaultLon = 18.0422994709472;
+var defaultLat = 64.111795;
+var defaultLon = -21.887454;
 var lat = defaultLat;
 var lng = defaultLon;
 var icon = "<%= asset_path('icon.png') %>"
@@ -9,7 +9,7 @@ var center = {
     "lat": lat,
     "lng": lng,
 };
-var zoom = 15;
+var zoom = 10;
 
 window.onload = function(){ 
   hdl = initMap(center, zoom, JSON.parse(localStorage.getItem('all_camps')));

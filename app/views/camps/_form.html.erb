@@ -4,7 +4,7 @@
   <%= t("form_basics_headline") %>
 </div>
 
-<p>En aktivitet ska sprida glädje, vara generös och leda till nya möten. Placera din aktivitet på kartan och fyll i formuläret nedan. När du fyllt i formuläret kan du ladda upp bilder på din aktivitet och på dig/er som arrangerar. </p>
+<p>Etiam risus nibh, malesuada sed eros eget, venenatis finibus nisl. In luctus lorem et tellus volutpat lacinia. Mauris ac posuere metus. Etiam luctus tincidunt eros ac porttitor. </p>
 
 <% if Rails.configuration.x.firestarter_settings["placement"] %>
 
@@ -255,13 +255,12 @@
 
   <br/>
   <br/>
-  <p><em>Behöver du eventuellt söka polistillstånd, maila max.lauritzen@thread.se för att få lite hjälp på traven.</em></p>
 
   <div class="submit">
     <% if @camp.name %>
-      <%= form.submit "Updatera aktivitet", class: 'btn btn-success' %>
+      <%= form.submit "Update activity", class: 'btn btn-success' %>
     <% else %>
-      <%= form.submit "Skapa aktivitet", class: 'btn btn-success' %>
+      <%= form.submit "Create activity", class: 'btn btn-success' %>
     <% end %>
   </div>
 

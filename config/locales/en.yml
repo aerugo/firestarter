@@ -21,48 +21,48 @@
 
 en:
   # Front page
-  browser_title_tag: "Kungsholmstorgs Dag"
-  top_headline_html: "Kungsholmstorgs Dag"
-  creations_menu: "Aktiviteter"
-  register_creation_menu: "Skapa aktivitet"
-  login_menu: "Logga in"
-  register_menu: "Registrera"
-  logout_menu: "Logga ut"
-  welcome_guest_title: "Välkommen till Kungsholmstorgs Dag"
-  welcome_guest_text_html: "Kungsholmstorgs Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'><b>klicka här!</b></a></b> <br> <br> En aktivitet behöver inte vara färdig när den läggs upp, utan kan uppdateras och utvecklas allt eftersom. Berätta om din idé och bjud in in grannar och samarbetspartners att hjälpa till!"
-  welcome_user_title: "Välkommen till Kungsholmstorgs Dag"
-  welcome_user_text_html: "Kungsholmstorgs Dag är en heldag av glädje, generositet och nya möten som du är med och skapar. Den 30:e september kommer grannar, företag, skolklasser, sportklubbar och föreningar att arrangera totalt 100 aktiviteter, vad blir ditt bidrag? Inspireras av alla dagens aktiviteter nedan och skapa din egen genom att <a href='camps/new'><b>klicka här!</b></a></b> <br> <br> En aktivitet behöver inte vara färdig när den läggs upp, utan kan uppdateras och utvecklas allt eftersom. Berätta om din idé och bjud in in grannar och samarbetspartners att hjälpa till!"
-  footer_left_html: "The Borderland is a participatory community where we co-create events and gatherings as prototypes for our dreams. It is an empty container, open to your initiative. It is an invitation to play, to reflect, and to engage. If you have any question please ask in our <a href='facebook.com/groups/theborderland/'>Facebook Group</a>."
-  footer_right_html: "In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators."
+  browser_title_tag: "Activity map"
+  top_headline_html: "Activity map"
+  creations_menu: "Activities"
+  register_creation_menu: "Create activity"
+  login_menu: "Log in"
+  register_menu: "Register"
+  logout_menu: "Log out"
+  welcome_guest_title: "Welcome text guest"
+  welcome_guest_text_html: "Etiam risus nibh, malesuada sed eros eget, venenatis finibus nisl. In luctus lorem et tellus volutpat lacinia. Mauris ac posuere metus. Etiam luctus tincidunt eros ac porttitor."
+  welcome_user_title: "Welcome text user"
+  welcome_user_text_html: "Etiam risus nibh, malesuada sed eros eget, venenatis finibus nisl. In luctus lorem et tellus volutpat lacinia. Mauris ac posuere metus. Etiam luctus tincidunt eros ac porttitor."
+  footer_left_html: "Etiam risus nibh, malesuada sed eros eget, venenatis finibus nisl. In luctus lorem et tellus volutpat lacinia. Mauris ac posuere metus. Etiam luctus tincidunt eros ac porttitor."
+  footer_right_html: "Etiam risus nibh, malesuada sed eros eget, venenatis finibus nisl. In luctus lorem et tellus volutpat lacinia. Mauris ac posuere metus. Etiam luctus tincidunt eros ac porttitor."
 
   # Creation registration form
-  form_basics_headline: "Skapa aktivitet"
+  form_basics_headline: "Create activity"
 
-  form_location_headline: "Välj en plats för din aktivitet"
+  form_location_headline: "Pick a location for your activity"
 
-  form_address_label: "Gatuadress eller vägbeskrivning"
+  form_address_label: "Street name or directions"
 
-  form_dream_name_label: "Namn på aktivitet "
-  form_dream_name_guidetext_html: "Vad kommer din aktivitet att heta?"
-  form_subtitle_label: "Kort beskrivning"
-  form_subtitle_guidetext_html: "Ge en kort beskrivning. Max 256 tecken."
-  form_start_time_label: "När börjar aktiviteten?"
-  form_end_time_label: "När slutar aktiviteten?"
-  form_creator_name_label: "Kontaktperson:"
+  form_dream_name_label: "Activity name "
+  form_dream_name_guidetext_html: "Pick a descriptive name for your activity."
+  form_subtitle_label: "Short description"
+  form_subtitle_guidetext_html: "A short description. At most 256 characters."
+  form_start_time_label: "When does the activity start?"
+  form_end_time_label: "When does the activity end?"
+  form_creator_name_label: "Contact person:"
   form_creator_name_guidetext_html: " "
-  form_organizer_label: "Aktiviteten arrangeras av:"
+  form_organizer_label: "Group:"
   form_organizer_guidetext_html: " "
-  form_creator_email_label: "Mail till kontaktperson:"
-  form_creator_email_guidetext_html: "För att vi ska kunna höras!"
-  form_contact_phone_label: "Telefonnummer (visas ej):"
-  form_contact_phone_guidetext_html: "För snabb kontakt."
+  form_creator_email_label: "Contact email:"
+  form_creator_email_guidetext_html: ""
+  form_contact_phone_label: "Phone number (not shown)::"
+  form_contact_phone_guidetext_html: ""
 
-  form_additional_headline: "Ytterligare information"
-  form_additional_info_text_html: "Kan fyllas i senare."
+  form_additional_headline: "Additional information"
+  form_additional_info_text_html: "Can be filled in later"
 
-  form_description_label: "Fullständig beskrivning av aktivitet"
+  form_description_label: "A detailed description of the activity"
   form_description_guidetext_html: ""
-  form_benefit_label: "På vilket sätt bidrar aktiviteten till mer glädje, generositet och nya möten på Kungsholmstorg?"
+  form_benefit_label: "How will this activity help the campaign?"
   form_benefit_guidetext_html: ""
   form_electricity_label: ""
   form_electricity_guidetext_html: ""
@@ -76,20 +76,20 @@ en:
   form_nature_guidetext_html: ""
   form_moop_label: ""
   form_moop_guidetext_html: ""
-  form_plan_label: "Vilka hoppas du/ni deltar?"
+  form_plan_label: "Who are you hoping to reach?"
   form_plan_guidetext_html: ""
-  form_cocreation_label: "Vilka skulle du/ni vilja samarbeta med?"
+  form_cocreation_label: "Who would you like to co-operate with?"
   form_cocreation_guidetext_html: ""
-  form_neighbors_label: "Behöver du/ni hjälp med något?"
+  form_neighbors_label: "Do you need help with anything?"
   form_neighbors_guidetext_html: ""
 
-  form_marketing_headline: "Marknadsföring"
-  form_marketing_label: "Marknadsföring"
-  form_marketing_guidetext_html: "Vad är er strategi för att marknadsföra er aktivitet och se till att folk kommer?"
-  form_facebook_label: "Länk till Facebook-event (om något)"
-  form_twitter_label: "Namn på Twitter (om något)"
-  form_instagram_label: "Namn på Instagram (om något)"
-  form_video_label: "Länk till video (om någon)"
+  form_marketing_headline: "Marketing"
+  form_marketing_label: "Marketing"
+  form_marketing_guidetext_html: "Will you market this activity somehow?"
+  form_facebook_label: ""
+  form_twitter_label: ""
+  form_instagram_label: ""
+  form_video_label: ""
 
   form_artgrants_headline: ""
   form_artgrants_text_html: ""
@@ -102,45 +102,45 @@ en:
   form_budgetplan_label: ""
   form_budgetplan_guidetext_html: ""
 
-  form_responsibility_label: "Jag förstår!"
-  form_responsibility_guidetext_html: "Jag förstår att jag är fullt ansvarig för planera, utföra och städa upp efter min aktivitet. <br>"
+  form_responsibility_label: ""
+  form_responsibility_guidetext_html: ""
 
   # Creation view
-  what_is_this_title: "Vad är 100 på Kungsholmstorg?"
+  what_is_this_title: "What is this?"
   what_is_this_text_html: ""
 
-  creation_info_headline: "Detaljer"
+  creation_info_headline: "Details"
 
-  marketing_info_headline: "Marknadsföring"
+  marketing_info_headline: "Marketing"
 
   cocreator_application_guidetext: ""
   cocreators_list_guidetext: ""
 
   # Manage images view
-  images_headline: "Bilder"
-  upload_headline: "Ladda upp bilder"
+  images_headline: "Images"
+  upload_headline: "Upload images"
   upload_guidetext_html: ""
 
   # Active records errors
   activerecord:
     attributes:
       camp:
-        name: "Namn"
-        subtitle: "Kort beskrivning"
-        contact_email: "Mail"
-        contact_name: "Kontaktperson"
+        name: "Name"
+        subtitle: "Short description"
+        contact_email: "Email"
+        contact_name: "Contact person"
         accept_terms: "Ansvarsboxen"
     errors:
       models:
         camp:
           attributes:
             name:
-              blank: "måste fyllas i"
+              blank: "must be filled in"
             subtitle:
-              blank: "måste fyllas i"
+              blank: "must be filled in"
             contact_email:
-              blank: "måste fyllas i"
+              blank: "must be filled in"
             contact_name:
-              blank: "måste fyllas i"
+              blank: "must be filled in"
             accept_terms:
-              accepted: "måste kryssas i"
+              accepted: "must be filled in"

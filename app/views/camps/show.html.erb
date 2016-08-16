@@ -45,7 +45,7 @@
 
         <!-- Creation text content -->
         <div class="camp-description">
-            <b>Sammanfattning</b>
+            <b>Summary</b>
             <p><%= simple_format(@camp.subtitle) %></p>
         </div>
 
@@ -104,11 +104,6 @@
             </div>
         <% end %>
 
-        <% random = Camp.order("RANDOM()").first %>
-        <a href="<%= url_for(random) %>" class="btn btn-primary camp-button" role="button">
-            Fler aktiviteter <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
-        </a>
-
         <div class="creation-info">
             <ul>
 
@@ -116,16 +111,16 @@
 
                 <% if current_user && @camp.creator == current_user %>
                     <li><span>
-                        <a href="<%= edit_camp_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Updatera aktivitet</a>
+                        <a href="<%= edit_camp_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Update activity</a>
                     </li></span>
                     <li><span>
-                        <a href="<%= camp_images_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Ladda upp bilder</a>
+                        <a href="<%= camp_images_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Upload images</a>
                     </li></span>
                 <% end %>
 
                 <br>
 
-                <li><span><b>Kontaktperson:</b> <%= @camp.contact_name %></span></li>
+                <li><span><b>Contact person:</b> <%= @camp.contact_name %></span></li>
                 <br>
 
                 <% if Rails.configuration.x.firestarter_settings["organizer"] and @camp.organizer != "" %>
@@ -367,7 +362,7 @@
 
                 <% if current_user && (@camp.creator == current_user || current_user.admin) %>
                     <%= form_for @camp, method: :delete do |f| %>
-                        <%= f.submit 'Ta bort aktiviteten', class: "btn btn-danger" , data: { confirm: 'Är du säker på att du vill ta bort aktiviteten?' } %>
+                        <%= f.submit 'Delete activity', class: "btn btn-danger" , data: { confirm: 'Are you sure you want to delete this activity?' } %>
                     <% end %>
                 <% end %>
 
