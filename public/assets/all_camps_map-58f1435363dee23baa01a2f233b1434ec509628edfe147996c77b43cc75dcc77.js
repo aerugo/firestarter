@@ -22,7 +22,7 @@ window.onload = function(){
         disableDefaultUI: true,
         center: {lat: 59.332296, lng: 18.035948},
         maxZoom: 18,
-        minZoom: 10
+        minZoom: 1
 
         // pass in other Google Maps API options here
       },
