@@ -1,4 +1,6 @@
-# campengine
+# Firestarter platform
+
+This readme is really, really outdated. Instructions to get started and to set up Active Admin are still valid though.
 
 ## To get started
 
