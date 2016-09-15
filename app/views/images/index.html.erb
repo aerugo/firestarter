@@ -1,5 +1,5 @@
 <div class="row">
-    <h2 class="header-sub-heading">Bilder till aktivitet</h2>
+    <h2 class="header-sub-heading">Activity images</h2>
 </div>
 
 <div class="row">
@@ -8,7 +8,7 @@
             <% image_url = image.attachment.url(:medium) %>
             <%= image_tag(image_url) %>
             <%= form_for image, url: camp_image_path(image.camp_id, image),  method: :delete do |form| %>
-                <%= form.submit 'Ta bort bild', { class: 'delete_button' } %>
+                <%= form.submit 'Remove image', { class: 'delete_button' } %>
             <% end %>
         </div>
     <% end %>
@@ -19,22 +19,22 @@
 </div>
 
 <div class="row">
-    <h2 class="header-sub-heading camp-upload_image">Ladda upp bilder</h2>
+    <h2 class="header-sub-heading camp-upload_image">Upload images</h2>
 
-    <p>Bilderna måste vara jpg, png eller gif. Bilder i liggande läge fungerar bäst på sidan. </p>
+    <p>Image files must be jpg, png or gif.</p>
 
 </div>
 
 
 <%= form_tag camp_images_path(camp_id: @camp_id), method: :post, multipart: true do %>
     <div class="row">
-        <%= label_tag :attachment, 'Ladda upp bild' %>
+        <%= label_tag :attachment, 'Upload image' %>
     </div>
 
     <div class="row">
         <div class="col-md-4">
             <%= file_field_tag :attachment %>
-            <%= submit_tag 'Ladda upp bild', class: 'btn btn-success camp-button' %>
+            <%= submit_tag 'Upload', class: 'btn btn-success camp-button' %>
         </div>
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>

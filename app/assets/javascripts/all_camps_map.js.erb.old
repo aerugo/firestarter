@@ -29,7 +29,7 @@ window.onload = function(){
       provider: {
         center: {lat: lat, lng: lng},
         maxZoom: 18,
-        minZoom: 10
+        minZoom: 1
 
         // pass in other Google Maps API options here
       },
