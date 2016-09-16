@@ -10,19 +10,17 @@
         </div>
         <div class="col-xs-6">
           <div class="header-nav">
+
+            <% if user_signed_in? %>
             <a href="/"><%=t :creations_menu %></a>
-            <% if user_signed_in? %>
             <%= link_to t("register_creation_menu"), new_camp_path %>
-            <% end %>
-            <% if !user_signed_in? %>
-            <%= link_to t("login_menu"), new_user_session_path %>
-            <% end %>
-            <% if !user_signed_in? %>
-            <%= link_to t("register_menu"), new_user_registration_path %>
-            <% end %>
-            <% if user_signed_in? %>
             <%= link_to t("logout_menu"), destroy_user_session_path, method: :delete %>
             <% end %>
+
+            <% if false %>
+            <%= link_to t("login_menu"), new_user_session_path %>
+            <% end %>
+
           </div>
         </div>
       </div>
