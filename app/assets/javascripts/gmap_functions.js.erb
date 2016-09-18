@@ -56,18 +56,21 @@ function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
 
       if(!!draggableMarker) {
         google.maps.event.addListener(Gmaps.marker.serviceObject, 'click', function(event) {
-            placeMarker(event.latLng);
+            draggableMarker.setPosition(event.latLng);
+            getLatLong();
         });
       }
 
-      function placeMarker(location) {
-        Gmaps.marker.serviceObject.setPosition(location);
-      }
+
 
     }
     
   );
 };
+
+function placeMarker(location) {
+  Gmaps.marker.serviceObject.setPosition(location);
+}
 
 function getLatLong(){
   document.getElementById("latitude").value = Gmaps.marker.serviceObject.position.lat();
