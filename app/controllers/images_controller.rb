@@ -35,6 +35,10 @@ class ImagesController < ApplicationController
     @camp_id = params[:camp_id]
   end
 
+  def camp
+    @camp = Camp.find(params[:id])
+  end
+
   private
 
   def image_params
