@@ -1,6 +1,6 @@
 'use strict';
 
-var icon = "<%= asset_path('icon.png') %>"
+var icon = "/assets/icon-74a9cf32c67549cc6491cc996eb670d628eee995203abc957932b9763d1d074a.png"
 
 function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
   var all_markers = [];
@@ -8,7 +8,6 @@ function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
   console.log(staticMarkers);
   for (var i = 0; i < staticMarkers.length; i++) {
     if(!!staticMarkers[i].latitude && !!staticMarkers[i].longitude) {
-      var url = "<a href='/camps/" + staticMarkers[i].id + "'>" + staticMarkers[i].name + "</a>";
       marker = {
             "lat": staticMarkers[i].latitude,
             "lng": staticMarkers[i].longitude,
@@ -17,7 +16,7 @@ function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
               "width":  32,
               "height": 32
             },
-            "infowindow": url,
+            "infowindow": `<a href='/camps/${staticMarkers[i].id}'>${staticMarkers[i].name}</a>`,
           };
       all_markers.push(marker);
     }
