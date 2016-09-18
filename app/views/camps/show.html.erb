@@ -120,7 +120,7 @@
 
                 <br>
 
-                <li><span><b>Contact person:</b> <%= @camp.contact_name %></span></li>
+                <li><span><b>Tengiliður:</b> <%= @camp.contact_name %></span></li>
                 <br>
 
                 <% if Rails.configuration.x.firestarter_settings["organizer"] and @camp.organizer != "" %>
@@ -129,7 +129,7 @@
                 <% end %>
 
 
-                <li><span><b>Mail:</b> <%= @camp.contact_email %></span></li>
+                <li><span><b>Tengiliður netfang:</b> <%= @camp.contact_email %></span></li>
                  <br>
 
                 <% if Rails.configuration.x.firestarter_settings["address"] and  @camp.address != "" %>
