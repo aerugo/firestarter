@@ -61,16 +61,10 @@ function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
         });
       }
 
-
-
     }
     
   );
 };
-
-function placeMarker(location) {
-  Gmaps.marker.serviceObject.setPosition(location);
-}
 
 function getLatLong(){
   document.getElementById("latitude").value = Gmaps.marker.serviceObject.position.lat();
