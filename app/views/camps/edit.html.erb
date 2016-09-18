@@ -5,7 +5,7 @@
   <%= javascript_include_tag 'new_camp_map' %> 
 <% end %>
 
-<% if current_user && (@camp.creator == current_user || current_user.admin) %>
+<% if current_user && (@camp.creator == current_user || current_user.admin || current_user.guide) %>
   <%= render(
     partial: 'camps/form',
   ) %>

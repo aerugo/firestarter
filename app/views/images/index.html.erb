@@ -1,42 +1,55 @@
-<div class="row">
-    <h2 class="header-sub-heading">Activity images</h2>
-</div>
+<% content_for(:head) do %>
+  <% browser_title = "Editing " + @camp.name + " - " + t(:browser_title_tag) %>
+  <title><%= browser_title %></title>
+<% end %>
 
-<div class="row">
-    <% @images.each do |image| %>
-        <div class="camp-image">
-            <% image_url = image.attachment.url(:medium) %>
-            <%= image_tag(image_url) %>
-            <%= form_for image, url: camp_image_path(image.camp_id, image),  method: :delete do |form| %>
-                <%= form.submit 'Remove image', { class: 'delete_button' } %>
-            <% end %>
+<% if current_user && (@camp.creator == current_user || current_user.admin || current_user.guide) %>
+    <div class="row">
+        <h2 class="header-sub-heading">Activity images</h2>
+    </div>
+
+    <div class="row">
+        <% @images.each do |image| %>
+            <div class="camp-image">
+                <% image_url = image.attachment.url(:medium) %>
+                <%= image_tag(image_url) %>
+                <%= form_for image, url: camp_image_path(image.camp_id, image),  method: :delete do |form| %>
+                    <%= form.submit 'Remove image', { class: 'delete_button' } %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+
+    <div class="row">
+        <a href="<%= camp_path(@camp_id) %>" class="btn btn-info camp-button" role="button">Back</a>
+    </div>
+
+    <div class="row">
+        <h2 class="header-sub-heading camp-upload_image">Upload images</h2>
+
+        <p>Image files must be jpg, png or gif.</p>
+
+    </div>
+
+
+    <%= form_tag camp_images_path(camp_id: @camp_id), method: :post, multipart: true do %>
+        <div class="row">
+            <%= label_tag :attachment, 'Upload image' %>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <%= file_field_tag :attachment %>
+                <%= submit_tag 'Upload', class: 'btn btn-success camp-button' %>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
         </div>
     <% end %>
-</div>
-
-<div class="row">
-    <a href="<%= camp_path(@camp_id) %>" class="btn btn-info camp-button" role="button">Back</a>
-</div>
-
-<div class="row">
-    <h2 class="header-sub-heading camp-upload_image">Upload images</h2>
-
-    <p>Image files must be jpg, png or gif.</p>
-
-</div>
-
-
-<%= form_tag camp_images_path(camp_id: @camp_id), method: :post, multipart: true do %>
-    <div class="row">
-        <%= label_tag :attachment, 'Upload image' %>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <%= file_field_tag :attachment %>
-            <%= submit_tag 'Upload', class: 'btn btn-success camp-button' %>
-        </div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-    </div>
+<% else %>
+    <p class="alert">Only the original creator can edit this page.</p>
 <% end %>
+
+
+
+
