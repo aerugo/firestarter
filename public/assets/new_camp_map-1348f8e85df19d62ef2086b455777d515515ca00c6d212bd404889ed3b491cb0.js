@@ -2,7 +2,7 @@ var defaultLat = 65.1486046;
 var defaultLon = -19.1305533;
 var lat = defaultLat;
 var lng = defaultLon;
-var icon = "<%= asset_path('icon.png') %>"
+var icon = "/assets/icon-74a9cf32c67549cc6491cc996eb670d628eee995203abc957932b9763d1d074a.png"
 
 var center = {
     "lat": lat,
