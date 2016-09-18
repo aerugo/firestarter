@@ -53,15 +53,13 @@ function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
         }
         Gmaps.marker = handler.addMarker(draggableMarker, {draggable: true});
         google.maps.event.addListener(Gmaps.marker.serviceObject, 'dragend', getLatLong);
-      }
-
-      if(!!draggableMarker) {
         google.maps.event.addListener(Gmaps.marker.serviceObject, 'click', function(event) {
             draggableMarker.lat = event.lat;
             draggableMarker.lng = event.lng;
-            console.log(draggableMarker);
+            console.log("HEY");
             getLatLong();
         });
+        console.log(draggableMarker);
       }
 
     }
