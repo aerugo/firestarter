@@ -53,7 +53,7 @@ function initMap(initialCenter, initialZoom, staticMarkers, draggableMarker) {
         }
         Gmaps.marker = handler.addMarker(draggableMarker, {draggable: true});
         google.maps.event.addListener(Gmaps.marker.serviceObject, 'dragend', getLatLong);
-        google.maps.event.addListener(Gmaps.marker.serviceObject, 'click', function(event) {
+        google.maps.addListener('click', function(event) {
             Gmaps.marker.serviceObject.setPosition({lat: event.lat, lng: event.lng})
             console.log("HEY");
             getLatLong();
