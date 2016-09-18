@@ -54,7 +54,7 @@ en:
   form_organizer_guidetext_html: " "
   form_creator_email_label: "Tengiliður, netfang:"
   form_creator_email_guidetext_html: ""
-  form_contact_phone_label: "Sími:"
+  form_contact_phone_label: "Tengiliður, sími:"
   form_contact_phone_guidetext_html: ""
 
   form_additional_headline: "Upplýsingar um staðinn/viðburðinn:"

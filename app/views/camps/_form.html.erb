@@ -43,11 +43,13 @@
     <%= form.text_field :end_time, :maxlength => 64 %>
   </div>
 
+  <% if Rails.configuration.x.firestarter_settings["organizer"] %>
   <div class="combo" id="organizer">
     <%= form.label t("form_organizer_label") %>
     <%= form.text_field :organizer, :maxlength => 64 %>
     <%= t("form_organizer_guidetext_html") %>
   </div>
+ <% end %>
 
   <div class="combo" id="contact_name">
     <%= form.label t("form_creator_name_label") %>
