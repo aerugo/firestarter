@@ -4,6 +4,7 @@ class Camp < ActiveRecord::Base
 	has_many :memberships
 	has_many :users, through: :memberships
   has_many :images #, :dependent => :destroy
+	has_one :owner
 
 	validates :creator, presence: true
 	validates :name, presence: true

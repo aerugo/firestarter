@@ -1,8 +1,10 @@
 <%= form_for @camp do |form| %>
 
+<% if false %>
 <div class="header-heading">
   <%= t("form_basics_headline") %>
 </div>
+<% end %>
 
 <% if Rails.configuration.x.firestarter_settings["placement"] %>
 

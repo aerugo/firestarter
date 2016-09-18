@@ -60,8 +60,8 @@ en:
   form_additional_headline: "Upplýsingar um staðinn/viðburðinn:"
   form_additional_info_text_html: "Má bæta inn seinna."
 
-  form_description_label: "Hvað er gott að vita um þennan stað/viðburð? Hvað gætu frambjóendur gert? Eru einhverjir aðrir Píratar sem tengjast þessu? Hvað er mikilvægt fyrir kjósendur á þessum stað?"
-  form_description_guidetext_html: ""
+  form_description_label: "Hvað er gott að vita um þennan stað/viðburð?"
+  form_description_guidetext_html: "Hvað gætu frambjóendur gert? Eru einhverjir aðrir Píratar sem tengjast þessu? Hvað er mikilvægt fyrir kjósendur á þessum stað?"
   form_benefit_label: "Hversvegna er mikilvægt að Píratar eru sýnilegir á þessum stað?"
   form_benefit_guidetext_html: ""
   form_electricity_label: ""
