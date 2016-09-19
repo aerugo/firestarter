@@ -4,7 +4,7 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.where(camp_id: @camp_id)
-    @camp = Camp.find(params[:id])
+    @camp = Camp.find(params[@camp_id])
   end
 
   def show
