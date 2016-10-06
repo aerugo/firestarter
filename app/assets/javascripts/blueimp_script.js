@@ -1,4 +1,8 @@
 window.onload = function(){ 
+  var links = document.getElementById('links');
+  if(!links)
+    return;
+  
   document.getElementById('links').onclick = function (event) {
     event = event || window.event;
     var target = event.target || event.srcElement,
