@@ -3,7 +3,7 @@ window.onload = function(){
   if(!links)
     return;
   
-  document.getElementById('links').onclick = function (event) {
+  links.onclick = function (event) {
     event = event || window.event;
     var target = event.target || event.srcElement,
       link = target.src ? target.parentNode : target,
