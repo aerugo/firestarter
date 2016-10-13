@@ -42,8 +42,13 @@ Rake task is in lib/tasks/import.rake and is run with "bundle exec rake import"
 ## Active Admin
 Users and creations can be administrated with Active Admin. 
 After install, run:
+```
 bundle exec rake db:migrate
 bundle exec rake db:seed
+```
+Then naviagte to
+http://localhost:3000/admin
+and use `admin@example.com` and `password`
 
 ## TODO
 Before final version, change "camps" to creations or dreams.
