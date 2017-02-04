@@ -1,51 +1,17 @@
 # Firestarter
 
-This is a platform to plan co-created events. It was originally created for Urban Burn Stockholm in 2016 and was then used for The Borderland in 2016. It's being continuously and sporadically developed by a rag-tag team and will probably always be in beta. You can see it in action here: http://dreams.theborderland.se/
+This is not the current main repository of this project. Please visit https://github.com/Metaburn/dreams for the most updated version. This original repository is kept for legacy reasons but is not maintained. Want to use it for your Burn? Get in touch there.
 
-## To get started
+Dreams is a platform to plan co-created events. It was originally created for Urban Burn Stockholm in 2016 and was then used for The Borderland in 2016 and For Midburnerot 2016 then Midburn 2017. This is the original main fork of the project, based on the work done for Urban Burn in early 2016 in https://github.com/urbanburn/campengine.
 
-Install ruby 2.3.0 (or any ruby will probably work).
+See Firestarter/Dreams in action:
 
-    gem install bundler # if needed
-    bundle install
-    bundle exec rake db:migrate
-
-To get all the deps and the database set up properly. To start the server:
-
-    bundle exec rails s
-
-Now rails will listen at `localhost:3000` for your requests.
-
-Go to `camps/new` to create a new camp and to `camps` to see a list of camps.
-
-## There are tests
-
-Run them with:
-
-    bundle exec rspec spec
-
-## Database
-
-Currently sqlite is used as database. We will stick to this in development but set up
-postgres in production. Install sqlite with your favourite package manager and you should
-be up and running right away.
-
-## Mail
-
-In development mode [mailcatcher](http://mailcatcher.me/) is configured to catch emails
-locally for easier testing.
-
-## Ticket ID Import
-
-Ticket ids are imported from a single column csv file of IDs, which is located in db/borderland_codes.csv
-Rake task is in lib/tasks/import.rake and is run with "bundle exec rake import"
+Midburn version: http://dreams.midburn.org/?lang=en
+Midburnerot version: http://dreams.midburnerot.com/?lang=en
+Borderland version: http://dreams.theborderland.se/
 
 
-## Active Admin
-Users and creations can be administrated with Active Admin. 
-After install, run:
-bundle exec rake db:migrate
-bundle exec rake db:seed
 
-## TODO
-Before final version, change "camps" to creations or dreams.
+
+
+
