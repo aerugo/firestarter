@@ -1,32 +1,63 @@
 <% content_for(:head) do %>
   <% browser_title = t(:browser_title_tag) %>
   <title><%= browser_title %></title>
-  <%= javascript_include_tag 'blueimp_script' %> 
-  <meta property="og:title" content="<%= t :chronicles_welcome_user_title %>" />
-  <meta property="og:description" content="<%= t :chronicles_welcome_user_text_html %>" />
-  <meta property="og:image" content="http://theborderland.se/assets/coverphoto.png" />
 <% end %>
 
-<div class="top_message" dir=<%=t :html_direction %>>
+<%= javascript_tag do %>
+    all_camps = <%= @camps.to_json.html_safe %> ;
+    localStorage.setItem('all_camps', JSON.stringify(all_camps));
+<% end %>
+
+<div class="row top_message">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3><%= t(:chronicles_welcome_user_title) %></h3>
+      <% if user_signed_in? %>
+        <%=t :welcome_user_title %>
+      <% else %>
+        <%=t :welcome_guest_title %>
+      <% end %>
     </div>
     <div class="panel-body">
-      <div class="col-md-12">
-      <%= t(:chronicles_welcome_user_text_html) %><br>
-        <b><%=t :search_title %></b>
+      <div class="col-md-8">
+        <% if user_signed_in? %>
+          <%=t :welcome_user_text_html %>
+        <% else %>
+          <%=t :welcome_guest_text_html %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <p><b>Sök efter aktiviteter</b></p>
         <%= form_for_filterrific @filterrific do |f| %>
-
+        
         <div>
           <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
           <%= f.text_field(
             :search_query,
-            class: 'filterrific-periodically-observed form-control'
           ) %>
         </div>
+        
+        <% if Rails.configuration.x.firestarter_settings["granting_active"] and @camp.minbudget %>
 
-        <%= render_filterrific_spinner %>
+        <br>
+
+          <div class="form-inline">
+            <%= f.check_box(:not_fully_funded, class: 'filterrific-periodically-observed checkbox') %>
+            Hide fully funded
+          </div>
+  
+          <div class="form-inline">
+            <%= f.check_box(:not_min_funded, class: 'filterrific-periodically-observed checkbox') %>
+            Hide minimum funded
+          </div>
+  
+          <div class="form-inline">
+            <%= f.check_box(:not_seeking_funding, class: 'filterrific-periodically-observed checkbox') %>
+            Hide not open for granting
+          </div>
+  
+          <%= render_filterrific_spinner %>
+        
+        <% end %>
 
         <% end %>
       </div>
@@ -38,3 +69,4 @@
   partial: 'chronicles/list',
   locals: { camps: @camps }
 ) %>
+
