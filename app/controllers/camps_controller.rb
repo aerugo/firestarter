@@ -2,9 +2,18 @@ class CampsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
+    filter = params[:filterrific] || { sorted_by: 'updated_at_desc' }
+    filter[:active] = true
+    filter[:not_hidden] = true
+    filter[:is_current_event] = false
+    if (!current_user.nil? && (current_user.admin? || current_user.guide?))
+      filter[:hidden] = true
+      filter[:not_hidden] = false
+    end
+
     @filterrific = initialize_filterrific(
       Camp,
-      params[:filterrific]
+      filter
     ) or return
     @camps = @filterrific.find.page(params[:page])
 

@@ -4,7 +4,7 @@ defaults: &defaults
   organizer: true
   description: true
   benefit: true
-  placement: true
+  placement: false
   address: true
   time: true
   electricity: false
