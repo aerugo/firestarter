@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   patch 'camps/:id/update_grants' => 'camps#update_grants'
   patch 'camps/:id/toggle_granting' => 'camps#toggle_granting'
 
+  get '/chronicles' => 'chronicles#index'
+
 end

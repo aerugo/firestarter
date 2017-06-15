@@ -23,5 +23,6 @@ module Firestarter
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     Rails.application.config.x.firestarter_settings = config_for(:firestarter_settings)
+    Rails.application.config.default_event = "kungsholmstorg2017"
   end
 end

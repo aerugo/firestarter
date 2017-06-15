@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601150347) do
+ActiveRecord::Schema.define(version: 20170615134705) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 20160601150347) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "camps", force: :cascade do |t|
-    t.string   "name",            limit: 64,                   null: false
-    t.string   "subtitle",        limit: 255,                  null: false
-    t.string   "contact_email",   limit: 64,                   null: false
-    t.string   "contact_name",    limit: 64,                   null: false
+    t.string   "name",            limit: 64,                                  null: false
+    t.string   "subtitle",        limit: 255,                                 null: false
+    t.string   "contact_email",   limit: 64,                                  null: false
+    t.string   "contact_name",    limit: 64,                                  null: false
     t.string   "contact_phone",   limit: 64
     t.text     "description",     limit: 4096
     t.text     "electricity",     limit: 255
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20160601150347) do
     t.boolean  "seeking_members"
     t.integer  "user_id"
     t.integer  "grants_received",              default: 0
-    t.boolean  "grantingtoggle",               default: false, null: false
+    t.boolean  "grantingtoggle",               default: false,                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "minfunded",                    default: false
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20160601150347) do
     t.string   "organizer"
     t.string   "benefit"
     t.string   "marketing",                    default: ""
+    t.string   "event_id",        limit: 128,  default: "kungsholmstorg2017"
   end
 
   add_index "camps", ["user_id"], name: "index_camps_on_user_id"

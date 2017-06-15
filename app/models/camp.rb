@@ -19,7 +19,8 @@ class Camp < ActiveRecord::Base
 	  :search_query,
 	  :not_fully_funded,
 	  :not_min_funded,
-	  :not_seeking_funding
+	  :not_seeking_funding,
+      :is_current_event
 	]
 	)
 	# Scope definitions. We implement all Filterrific filters through ActiveRecord
@@ -85,5 +86,9 @@ class Camp < ActiveRecord::Base
 		return nil  if '0' == flag # checkbox unchecked
 		where(grantingtoggle: true)
 	}
+
+	  scope :is_current_event, lambda { |flag|
+	    where(camps: { event_id: Rails.application.config.default_event })
+	  }
 
 end
