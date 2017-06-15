@@ -5,7 +5,7 @@ class CampsController < ApplicationController
     filter = params[:filterrific] || { sorted_by: 'updated_at_desc' }
     filter[:active] = true
     filter[:not_hidden] = true
-    filter[:is_current_event] = false
+    filter[:is_current_event] = true
     if (!current_user.nil? && (current_user.admin? || current_user.guide?))
       filter[:hidden] = true
       filter[:not_hidden] = false
