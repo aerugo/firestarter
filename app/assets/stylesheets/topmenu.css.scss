@@ -4,15 +4,16 @@
   margin: 0px;
   color: rgb(0, 213, 255);
   width: 100%;
-  height: 90px;
+  height: 65px;
   max-width: none;
 }
 
 .header-top-menu {
   display: inline-block;
-  font-size: 52px;
+  font-size: 30px;
+  margin-top: 15px;
   font-family: 'Dosis', sans-serif;
-  weight: bold;
+  font-weight: 500;
 }
 
 .coverphoto-panel {
@@ -25,7 +26,7 @@
     color: rgb(0,0,0);
     text-decoration: none;
     &:hover { 
-        color: rgb(250, 176, 11);
+        color: rgb(112, 179, 81);
       }
   }
 
@@ -33,8 +34,7 @@
 
 .header-nav {
   display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 18px;
   font-family: 'Dosis', sans-serif;
   display: -webkit-flex; /* Safari */
   -webkit-justify-content: space-around; /* Safari 6.1+ */

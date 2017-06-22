@@ -19,19 +19,20 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+en: 
   # Front page
   browser_title_tag: "Kungsholmstorgs Dag"
   top_headline_html: "Kungsholmstorgs Dag"
   creations_menu: "Aktiviteter"
+  chronicles_menu: "Historik 2016"
   register_creation_menu: "Skapa aktivitet"
   login_menu: "Logga in"
   register_menu: "Registrera"
   logout_menu: "Logga ut"
   welcome_guest_title: "Välkommen till Kungsholmstorgs Dag"
-  welcome_guest_text_html: "<p><b>VAR MED OCH SKAPA KUNGSHOLMSTORGS DAG 15/9</b></p><p>Förra året arrangerade grannar, företag, sportklubbar och föreningar 82 aktiviteter på torget och kvarteren runtom. I år vill vi skapa 100 aktiviteter, men då behöver vi din hjälp!</p><p><em>Såhär gör du för att arrangera en aktivitet på Kungsholmstorgs Dag:</em></p><p>1: Fundera på hur du vill brida till mer glädje, generösitet och nya möten på Kungsholmstorg. Läs igenom och inspireras av eventets riktlinjer.</p><p>2: <a href='aktiviteter/new' style='color:#75b62a';>Klicka här för att registrera din aktivitet!</a> Den behöver inte vara färdig när den registreras, utan kan uppdateras och utvecklas allt eftersom.</p><p>3: Sprid information om eventet och din aktivitet bland kunder och egna nätverk. Kanske du hittar samarbetspartners eller fler som vill bidra med aktiviteter!</p>"
+  welcome_guest_text_html: "<p><b>VAR MED OCH SKAPA KUNGSHOLMSTORGS DAG 15/9</b></p><p>På Kungsholmstorgs Dag fyller vi tillsammans området med generösa aktiviteter som sprider glädje och skapar nya möten. Alla som vill får arrangera en aktivitet! Nedan kan du läsa om de aktiviteter som är registrerade hittills. Vad blir ditt bidrag?</p><p><a href='https://kungsholmstorg.herokuapp.com/aktiviteter/new'>Registrera din egen aktivitet här</a> och ta del av uppdateringar <a href='https://www.facebook.com/events/471909226493908/?fref=ts'>på Facebook</a>.</p>"
   welcome_user_title: "Välkommen till Kungsholmstorgs Dag"
-  welcome_user_text_html: "<p><b>VAR MED OCH SKAPA KUNGSHOLMSTORGS DAG 15/9</b></p><p>Förra året arrangerade grannar, företag, sportklubbar och föreningar 82 aktiviteter på torget och kvarteren runtom. I år vill vi skapa 100 aktiviteter, men då behöver vi din hjälp!</p><p><em>Såhär gör du för att arrangera en aktivitet på Kungsholmstorgs Dag:</em></p><p>1: Fundera på hur du vill brida till mer glädje, generösitet och nya möten på Kungsholmstorg. Läs igenom och inspireras av eventets riktlinjer.</p><p>2: <a href='aktiviteter/new' style='color:#75b62a'>Klicka här för att registrera din aktivitet!</a> Den behöver inte vara färdig när den registreras, utan kan uppdateras och utvecklas allt eftersom.</p><p>3: Sprid information om eventet och din aktivitet bland kunder och egna nätverk. Kanske du hittar samarbetspartners eller fler som vill bidra med aktiviteter!</p>"
+  welcome_user_text_html: "<p><b>VAR MED OCH SKAPA KUNGSHOLMSTORGS DAG 15/9</b></p><p>På Kungsholmstorgs Dag fyller vi tillsammans området med generösa aktiviteter som sprider glädje och skapar nya möten. Alla som vill får arrangera en aktivitet! Nedan kan du läsa om de aktiviteter som är registrerade hittills. Vad blir ditt bidrag?</p><p><a href='https://kungsholmstorg.herokuapp.com/aktiviteter/new'>Registrera din egen aktivitet här</a> och ta del av uppdateringar <a href='https://www.facebook.com/events/471909226493908/?fref=ts'>på Facebook</a>.</p>"
   footer_left_html: "The Borderland is a participatory community where we co-create events and gatherings as prototypes for our dreams. It is an empty container, open to your initiative. It is an invitation to play, to reflect, and to engage. If you have any question please ask in our <a href='facebook.com/groups/theborderland/'>Facebook Group</a>."
   footer_right_html: "In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators."
 
@@ -40,13 +41,13 @@ en:
 
   form_location_headline: "Välj en plats för din aktivitet"
 
-  form_address_label: "Gatuadress eller vägbeskrivning"
+  form_address_label: "Plats för aktivitet"
 
   form_dream_name_label: "Namn på aktivitet "
   form_dream_name_guidetext_html: "Vad kommer din aktivitet att heta?"
   form_subtitle_label: "Kort beskrivning"
   form_subtitle_guidetext_html: "Ge en kort beskrivning. Max 256 tecken."
-  form_start_time_label: "När börjar aktiviteten?"
+  form_start_time_label: "Tider för aktivitet"
   form_end_time_label: "När slutar aktiviteten?"
   form_creator_name_label: "Kontaktperson:"
   form_creator_name_guidetext_html: " "
@@ -64,7 +65,7 @@ en:
   form_description_guidetext_html: ""
   form_benefit_label: "På vilket sätt bidrar aktiviteten till mer glädje, generositet och nya möten på Kungsholmstorg?"
   form_benefit_guidetext_html: ""
-  form_electricity_label: ""
+  form_electricity_label: "Jag vill gärna ha tillgång till el om möjligt"
   form_electricity_guidetext_html: ""
   form_light_label: ""
   form_light_guidetext_html: ""
@@ -84,7 +85,7 @@ en:
   form_neighbors_guidetext_html: ""
 
   form_marketing_headline: "Marknadsföring"
-  form_marketing_label: "Marknadsföring"
+  form_marketing_label: "Strategi för marknadsföring (visas ej)"
   form_marketing_guidetext_html: "Vad är er strategi för att marknadsföra er aktivitet och se till att folk kommer?"
   form_facebook_label: "Länk till Facebook-event (om något)"
   form_twitter_label: "Namn på Twitter (om något)"

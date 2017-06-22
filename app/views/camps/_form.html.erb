@@ -4,7 +4,7 @@
   <%= t("form_basics_headline") %>
 </div>
 
-<p>En aktivitet ska sprida glädje, vara generös och leda till nya möten. Placera din aktivitet på kartan och fyll i formuläret nedan. När du fyllt i formuläret kan du ladda upp bilder på din aktivitet och på dig/er som arrangerar. </p>
+<p>Kul att du vill bidra med en aktivitet till Kungsholmstorgs Dag! Fyll i formuläret nedan så gott du kan, du kan alltid uppdatera senare. När du är klar med formuläret kan du ladda upp bilder på aktiviteten och er som arrangerar. Vi granskar alla aktiviteter innan de publiceras för att säkerställa att den bidrar till generositet, glädje och nya möten.</p>
 
 <% if Rails.configuration.x.firestarter_settings["placement"] %>
 
@@ -14,11 +14,6 @@
 
   <div>
     <div id="map"></div>
-  </div>
-
-    <div class="combo" id="address">
-    <%= form.label t("form_address_label") %>
-    <%= form.text_field :address, :maxlength => 255 %>
   </div>
 
 <% end %>
@@ -35,15 +30,20 @@
     <%= t("form_subtitle_guidetext_html") %>
   </div>
 
-  <div class="combo" id="start_time">
-    <%= form.label t("form_start_time_label") %>
-    <%= form.text_field :start_time, :maxlength => 64 %>
+  <div class="combo" id="address">
+    <%= form.label t("form_address_label") %>
+    <%= form.text_field :address, :maxlength => 255 %>
   </div>
 
-  <div class="combo" id="end_time">
+  <div class="combo" id="start_time">
+    <%= form.label t("form_start_time_label") %>
+    <%= form.text_field :start_time, :maxlength => 255 %>
+  </div>
+
+  <!-- div class="combo" id="end_time">
     <%= form.label t("form_end_time_label") %>
     <%= form.text_field :end_time, :maxlength => 64 %>
-  </div>
+  </div -->
 
   <div class="combo" id="organizer">
     <%= form.label t("form_organizer_label") %>
@@ -169,6 +169,22 @@
     <%= form.text_area :neighbors, :maxlength => 4096 %>
     <%= t("form_neighbors_guidetext_html") %>
   <% end %>
+
+  <br/>
+  <br/>
+
+  <div class="checkbox_container">
+    <%= form.check_box :need_electricity, class: 'form_checkbox' %>
+    <%= form.label "Jag vill gärna ha tillgång till el om möjligt" %>
+  </div>
+
+  <br/>
+  <br/>
+
+  <div class="checkbox_container">
+    <%= form.check_box :need_tent, class: 'form_checkbox' %>
+    <%= form.label "Jag är intresserad av att hyra bord & tält" %>
+  </div>
 
   <% if Rails.configuration.x.firestarter_settings["marketing"] %>
     <br/>

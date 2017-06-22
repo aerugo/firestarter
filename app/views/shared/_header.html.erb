@@ -5,12 +5,13 @@
 
   <div class="main_content top_menu">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-4">
           <h1><a class="header-top-menu" href="/"><%=t :top_headline_html %></a></h1>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-8">
           <div class="header-nav">
             <a href="/"><%=t :creations_menu %></a>
+            <%= link_to t("chronicles_menu"), chronicles_path %>
             <% if user_signed_in? %>
             <%= link_to t("register_creation_menu"), new_camp_path %>
             <% end %>

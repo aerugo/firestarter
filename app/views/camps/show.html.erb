@@ -125,22 +125,22 @@
 
                 <br>
 
-                <li><span><b>Kontaktperson:</b> <%= @camp.contact_name %></span></li>
+                <li><span><b>Kontaktperson:</b>  <br> <%= @camp.contact_name %></span></li>
                 <br>
 
                 <% if Rails.configuration.x.firestarter_settings["organizer"] and @camp.organizer != "" %>
-                    <li><span><b>Arrangeras av:</b> <%= @camp.organizer %></span></li>
+                    <li><div><b>Arrangeras av:</b>  <br> <%= @camp.organizer %></div></li>
                     <br>
                 <% end %>
 
 
-                <li><span><b>Mail:</b> <%= @camp.contact_email %></span></li>
+                <li><span><b>Mail:</b>  <br> <%= @camp.contact_email %></span></li>
                  <br>
 
                 <% if Rails.configuration.x.firestarter_settings["address"] and  @camp.address != "" %>
-                    <li><span>
-                        <b><%=t :form_address_label %></b> <%= @camp.address %>
-                    </span></li>
+                    <li><div>
+                        <b><%=t :form_address_label %></b> <br> <%= @camp.address %>
+                    </div></li>
 
 
                     <br>
@@ -148,18 +148,9 @@
 
 
                 <% if Rails.configuration.x.firestarter_settings["time"] and  @camp.start_time != "" %>
-                    <li><span>
-                        <b><%=t :form_start_time_label %></b> <%= @camp.start_time %>
-                    </span></li>
-
-
-                    <br>
-                <% end %>
-
-                <% if Rails.configuration.x.firestarter_settings["time"] and  @camp.end_time != "" %>
-                    <li><span>
-                        <b><%=t :form_end_time_label %></b> <%= @camp.end_time %>
-                    </span></li>
+                    <li><div>
+                        <b><%=t :form_start_time_label %></b>  <br> <%= @camp.start_time %>
+                    </div></li>
 
 
                     <br>
