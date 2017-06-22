@@ -39,6 +39,14 @@ p {
   padding-bottom: 1em;
 }
 
+a {
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  line-height: inherit;
+  img { border:none; }
+}
+
 .creation-info {
 }
 
