@@ -6,7 +6,7 @@
 
     <div class="camps_list col-xs-12">
 
-        <% @camps.each do |camp| %>
+        <% @camps.select { |camp| camp.event_id == Rails.application.config.default_event }.each do |camp| %>
 
             <a href="<%= url_for(camp) %>">
                 <div class="camp_card">
