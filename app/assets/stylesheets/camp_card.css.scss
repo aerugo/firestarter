@@ -8,7 +8,7 @@
   overflow: hidden;
 
   &:hover {
-    background: rgba(112, 179, 81, 0.5);
+    background: rgba(232, 232, 232, 0.5);
   }
 
   .img-box {
@@ -33,18 +33,14 @@
       height: auto;
     }
   }
+
+  p {
+    padding-bottom: 1em;
+  }
+
 }
 
-p {
-  padding-bottom: 1em;
-}
 
-a {
-  cursor: pointer;
-  color: black;
-  text-decoration: none;
-  line-height: inherit;
-}
 
 .creation-info {
 }
