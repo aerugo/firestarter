@@ -269,6 +269,15 @@
     </div>
   <% end %>
 
+  <% if current_user.admin %>
+    <br/>
+    <br/>
+    <b>Publicerat</b>
+    <div class="checkbox_container">
+      <%= form.check_box :published, class: 'form_checkbox' %>
+    </div>
+  <% end %>
+
   <br/>
   <br/>
   <p><em>Behöver du eventuellt söka polistillstånd, maila max.lauritzen@thread.se för att få lite hjälp på traven.</em></p>

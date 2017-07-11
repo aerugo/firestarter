@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622124305) do
+ActiveRecord::Schema.define(version: 20170711203639) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20170622124305) do
     t.string   "event_id",         limit: 128,  default: "kungsholmstorg2017"
     t.boolean  "need_electricity"
     t.boolean  "need_tent"
+    t.boolean  "published"
   end
 
   add_index "camps", ["user_id"], name: "index_camps_on_user_id"

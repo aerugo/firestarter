@@ -6,7 +6,29 @@
 
     <div class="camps_list col-xs-12">
 
-        <% @camps.select { |camp| camp.event_id == Rails.application.config.default_event }.each do |camp| %>
+        <% @camps.select { |camp| camp.event_id == Rails.application.config.default_event && !camp.published }.each do |camp| %>
+
+        <% if current_user && (camp.creator == current_user || current_user.admin) %>
+            <a href="<%= url_for(camp) %>">
+                <div class="camp_card">
+                    <div class="img-box">
+                        <% if camp.images.any? %>
+                            <%= image_tag(camp.images.first.attachment.url(:large)) %>
+                        <% else %>
+                            <%= image_tag('bsb_placeholder.jpg') %>
+                        <% end %>
+                    </div>
+                  <% id = camp.id %>
+                  <b><%= truncate(camp.name, length: 50) %></b>
+                  <span><b>(Inte publicerat)</b></span>
+                  <span class="camp_card-desc"><%= truncate(camp.subtitle, length: 130) %></span>
+                </div>
+            </a>
+        <% end %>
+
+        <% end %>
+
+        <% @camps.select { |camp| camp.event_id == Rails.application.config.default_event && camp.published }.each do |camp| %>
 
             <a href="<%= url_for(camp) %>">
                 <div class="camp_card">
