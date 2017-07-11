@@ -114,7 +114,7 @@
 
                 <li><span><h2 class="header-sub-heading"><%=t :creation_info_headline %></h2></span></li>
 
-                <% if current_user && @camp.creator == current_user %>
+                <% if current_user && (@camp.creator == current_user || current_user.admin) %>
                     <li><span>
                         <a href="<%= edit_camp_path(@camp) %>" class="btn btn-primary camp-button" role="btn button">Updatera aktivitet</a>
                     </li></span>
