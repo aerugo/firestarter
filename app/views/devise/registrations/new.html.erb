@@ -16,15 +16,15 @@
     </div>
 
     <div class="field">
-      <%= f.label :password %>
+      <%= f.label :lösenord %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(Minst <%= @minimum_password_length %> tecken)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :repetera_lösenord %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
@@ -46,7 +46,7 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: "btn btn-success" %>
+        <%= f.submit "Registrera dig", class: "btn btn-success" %>
       </div>
       
   <% end %>

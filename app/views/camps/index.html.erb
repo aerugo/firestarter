@@ -38,6 +38,8 @@
           ) %>
         </div>
         
+
+
         <% if Rails.configuration.x.firestarter_settings["granting_active"] and @camp.minbudget %>
 
         <br>
@@ -73,6 +75,8 @@
     <div id="map"></div>
   </div>
 <% end %>
+
+<h2>Aktiviteter på Kungsholmstorgs Dag</h2>
 
 <%= render(
   partial: 'camps/list',
