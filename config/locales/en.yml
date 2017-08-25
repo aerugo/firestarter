@@ -19,7 +19,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en: 
+en:
   # Front page
   browser_title_tag: "Kungsholmstorgs Dag"
   top_headline_html: "Kungsholmstorgs Dag"
@@ -30,9 +30,9 @@ en:
   register_menu: "Registrera"
   logout_menu: "Logga ut"
   welcome_guest_title: "Välkommen till Kungsholmstorgs Dag"
-  welcome_guest_text_html: "<p><b>VAR MED OCH SKAPA KUNGSHOLMSTORGS DAG 15/9</b></p><p>På Kungsholmstorgs Dag fyller vi tillsammans området med generösa aktiviteter som sprider glädje och skapar nya möten. Alla som vill får arrangera en aktivitet! Nedan kan du läsa om de aktiviteter som är registrerade hittills. Vad blir ditt bidrag? <br/><br/></p><p><a href='https://kungsholmstorg.herokuapp.com/aktiviteter/new' class='btn btn-success' role=’button'>Skapa en aktivitet</a> </p>"
+  welcome_guest_text_html: "<p><b>VAR MED OCH SKAPA KUNGSHOLMSTORGS DAG 15/9</b></p><p>På Kungsholmstorgs Dag fyller vi tillsammans området med generösa aktiviteter som sprider glädje och skapar nya möten. Alla som vill får arrangera en aktivitet! Nedan kan du läsa om de aktiviteter som är registrerade hittills.<a href='http://www.kungsholmstorg.se'><b> Läs mer om eventet här.</b></a> Vad blir ditt bidrag?<br/><br/></p><p><a href='https://kungsholmstorg.herokuapp.com/aktiviteter/new' class='btn btn-success' role=’button'>Skapa en aktivitet</a> </p>"
   welcome_user_title: "Välkommen till Kungsholmstorgs Dag"
-  welcome_user_text_html: "<p><b>VAR MED OCH SKAPA KUNGSHOLMSTORGS DAG 15/9</b></p><p>På Kungsholmstorgs Dag fyller vi tillsammans området med generösa aktiviteter som sprider glädje och skapar nya möten. Alla som vill får arrangera en aktivitet! Nedan kan du läsa om de aktiviteter som är registrerade hittills. Vad blir ditt bidrag? <br/><br/></p><p><a href='https://kungsholmstorg.herokuapp.com/aktiviteter/new' class='btn btn-success' role=’button'>Skapa en aktivitet</a></p>"
+  welcome_user_text_html: "<p><b>VAR MED OCH SKAPA KUNGSHOLMSTORGS DAG 15/9</b></p><p>På Kungsholmstorgs Dag fyller vi tillsammans området med generösa aktiviteter som sprider glädje och skapar nya möten. Alla som vill får arrangera en aktivitet! Nedan kan du läsa om de aktiviteter som är registrerade hittills. <a href='http://www.kungsholmstorg.se'><b> Läs mer om eventet här.</b></a> Vad blir ditt bidrag? <br/><br/></p><p><a href='https://kungsholmstorg.herokuapp.com/aktiviteter/new' class='btn btn-success' role=’button'>Skapa en aktivitet</a></p>"
   footer_left_html: "The Borderland is a participatory community where we co-create events and gatherings as prototypes for our dreams. It is an empty container, open to your initiative. It is an invitation to play, to reflect, and to engage. If you have any question please ask in our <a href='facebook.com/groups/theborderland/'>Facebook Group</a>."
   footer_right_html: "In July 18-24 2016, The Borderland community will gather in Boesdal limestone quarry, south of Copenhagen, Denmark. It is a festival, where all the organization and all creative content is created by the participants. The event is for co-creators only, and not open to spectators."
 

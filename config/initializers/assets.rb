@@ -9,7 +9,7 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
+Rails.application.config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
 Rails.application.config.assets.precompile += %w( blueimp_script.js )
 Rails.application.config.assets.precompile += %w( new_camp_map.js.erb )
 Rails.application.config.assets.precompile += %w( all_camps_map.js.erb )
@@ -17,3 +17,4 @@ Rails.application.config.assets.precompile += %w( gmap_functions.js.erb )
 Rails.application.config.assets.precompile += %w( logo_thread.png )
 Rails.application.config.assets.precompile += %w( thread-logo.png )
 Rails.application.config.assets.precompile += %w( swedbank-logo.png )
+Rails.application.config.assets.precompile += %w( vart-kungsholmen-logo.png )
